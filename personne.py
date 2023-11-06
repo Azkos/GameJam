@@ -2,10 +2,10 @@
 
 import pygame
 
-class Informatique:
+class Personne:
 
-    # Un personnage de type informatique possède une attaque moyenne et une vie moyenne
+    # Un personnage est défini par de l'attaque et de la vie
     def __init__(self, attaque, vie):
         self.attaque_base = attaque
         self.vie_base = vie
-        dsfdfdfd
+
