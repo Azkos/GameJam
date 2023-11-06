@@ -29,3 +29,20 @@ Food truck pour acheter du soin.
 Fontenas pour acheter de l'equipement.
 
 On sort du monde parallèle pour aller en cours et on voit un truc du monde parallèle dans le monde réel.
+
+
+Choses à faire (par ordre de priorité) :
+
+-Sprite du personnage principal, des monstres.
+
+-Système de génération des salles
+
+-Système de combat
+
+-Sprite des salles (3 ou 4)
+
+-Sprite de salles de debut et de fin, salle du boss
+
+-Sprite des personnages secondaires
+
+-Sound Design
