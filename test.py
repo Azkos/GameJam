@@ -1,5 +1,6 @@
 import pygame
 import sys
+
 # Initialisation de Pygame
 pygame.init()
 
@@ -15,11 +16,15 @@ noir = (0, 0, 0)
 # Police de caractères
 font = pygame.font.Font(None, 36)
 
+# Chargez l'image d'arrière-plan
+fond = pygame.image.load("image/v_iut2-rentree-2023_1696500078894-jpg (2)_120x80.png")  # Remplacez "background.jpg" par le chemin de votre image d'arrière-plan
+fond = pygame.transform.scale(fond, (largeur, hauteur))
+
 # Texte de l'écran de titre
 titre_texte = font.render("Mon Jeu", True, blanc)
 jouer_texte = font.render("Appuyez sur une touche pour jouer", True, blanc)
 
-# Boucle principale
+# Boucle principale pour l'écran de titre
 en_jeu = False
 while not en_jeu:
     for evenement in pygame.event.get():
@@ -29,8 +34,8 @@ while not en_jeu:
         if evenement.type == pygame.KEYDOWN:
             en_jeu = True
 
-    # Effacer l'écran
-    fenetre.fill(noir)
+    # Afficher l'arrière-plan de l'écran de titre
+    fenetre.blit(fond, (0, 0))
 
     # Afficher le texte de l'écran de titre
     titre_rect = titre_texte.get_rect(center=(largeur // 2, hauteur // 2 - 50))
@@ -52,9 +57,10 @@ while en_jeu:
 
     # Logique de jeu et affichage ici
 
-    fenetre.fill(noir)  # Effacer l'écran de jeu
+    # Afficher l'arrière-plan du jeu
+    fenetre.blit(fond, (0, 0))
 
-    # Dessiner le contenu de votre jeu ici
+    # Dessiner le contenu de votre jeu par-dessus l'arrière-plan
 
     pygame.display.flip()
 
