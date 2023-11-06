@@ -19,12 +19,17 @@ font = pygame.font.Font(None, 36)
 titre_texte = font.render("Mon Jeu", True, blanc)
 jouer_texte = font.render("Appuyez sur une touche pour jouer", True, blanc)
 
+# Musique de l'écran de titre
+pygame.mixer_music.load('Musique/menu.mp3')
+pygame.mixer.music.play(-1)
+
 # Boucle principale
 en_jeu = False
 while not en_jeu:
     for evenement in pygame.event.get():
         if evenement.type == pygame.QUIT:
             pygame.quit()
+            pygame.mixer.music.stop()
             sys.exit()
         if evenement.type == pygame.KEYDOWN:
             en_jeu = True
