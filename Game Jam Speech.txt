@@ -31,6 +31,25 @@ Fontenas pour acheter de l'equipement.
 On sort du monde parallèle pour aller en cours et on voit un truc du monde parallèle dans le monde réel.
 
 
+Les différentes classes
+-----------------------------------------------------------|
+    NOM         |    ATTAQUE  |    VIE    |  COMPETENCE    |
+-----------------------------------------------------------|
+Informatique    |   Moyenne   |  Moyenne  |   Hacking      |
+-----------------------------------------------------------|
+Juridique       |   Faible    |  Elévée   |   Coupable     |
+-----------------------------------------------------------|
+Carrière Social |   Faible    |  Moyenne  |   Compassion   |
+-----------------------------------------------------------|
+Info-Com        |   Elévée    |  Faible   |                |
+-----------------------------------------------------------|
+GEA             |   Faible    |  Faible   |   Réduction    |
+------------------------------------------------------------
+
+
+
+
+
 Choses à faire (par ordre de priorité) :
 
 -Sprite du personnage principal, des monstres.
@@ -38,6 +57,21 @@ Choses à faire (par ordre de priorité) :
 -Système de génération des salles
 
 -Système de combat
+
+    Caractérisé par un tempo, le joueur principal, l'ennemi,
+    test de fin de combat,
+    un script de lancement du combat: démarre le tempo, initialise la vie des deux combattant, et lance le premier tour
+    à chaque tour, on esquive ou on frappe aléatoirement (si deux esquive à la suite, on frappe forcément au prochain coup)
+    il faut appuyer le plus précisément possible en rythme avec le tempo avec un indicateur visuel.
+
+    On doit attaquer ou esquiver en rythme, plus on est précis et plus on mettre de dégat et mon on en prendra.
+    Compétence spéciale pour chaque classe
+        -Info : Hacking -> permet d'esquiver automatiquement les attaques pendant un certain temps
+        -Carrières Juridiques : Coupable -> permet d'infliger de gros dégats d'un coup
+        -Carrières Sociales : Compassion -> permet d'être plus précis plus facilement
+        -Info-com :
+        -GEA :  Réduction   -> permet de réduire les coûts pour se soigner ou acheter des choses
+
 
 -Sprite des salles (3 ou 4)
 
