@@ -52,6 +52,14 @@ Choses à faire (par ordre de priorité) :
 -Système de génération des salles
 
 -Système de combat
+    On doit attaquer ou esquiver en rythme, plus on est précis et plus on mettre de dégat et mon on en prendra.
+    Compétence spéciale pour chaque classe
+        -Info : Hacking -> permet d'esquiver automatiquement les attaques pendant un certain temps
+        -Carrières Juridiques : Coupable -> permet d'infliger de gros dégats d'un coup
+        -Carrières Sociales : Compassion -> permet d'être plus précis plus facilement
+        -Info-com :
+        -GEA :
+
 
 -Sprite des salles (3 ou 4)
 
