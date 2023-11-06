@@ -33,13 +33,18 @@ On sort du monde parallèle pour aller en cours et on voit un truc du monde para
 
 Les différentes classes
 -----------------------------------------------------------|
-    NOM      |    ATTAQUE  |     VIE   |  COMPETENCE       |
+    NOM         |    ATTAQUE  |    VIE    |  COMPETENCE    |
 -----------------------------------------------------------|
-Informatique |   Moyenne   |  Moyenne  | Tape plus vite    |
+Informatique    |   Moyenne   |  Moyenne  |   Hacking      |
 -----------------------------------------------------------|
-Juridique    |   faible    |  élévée   | endors les ennemis|
+Juridique       |   Faible    |  Elévée   |   Coupable     |
 -----------------------------------------------------------|
-
+Carrière Social |   Faible    |  Moyenne  |   Compassion   |
+-----------------------------------------------------------|
+Info-Com        |   Elévée    |  Faible   |                |
+-----------------------------------------------------------|
+GEA             |   Faible    |  Faible   |   Réduction    |
+------------------------------------------------------------
 
 
 
@@ -58,7 +63,7 @@ Choses à faire (par ordre de priorité) :
         -Carrières Juridiques : Coupable -> permet d'infliger de gros dégats d'un coup
         -Carrières Sociales : Compassion -> permet d'être plus précis plus facilement
         -Info-com :
-        -GEA :
+        -GEA :  Réduction   -> permet de réduire les coûts pour se soigner ou acheter des choses
 
 
 -Sprite des salles (3 ou 4)
