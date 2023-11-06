@@ -40,7 +40,7 @@ class MonSprite(pygame.sprite.Sprite):
         self.image = sprite_walk1
         self.rect = self.image.get_rect()
         self.rect.center = (largeur // 2, hauteur // 2)  # Position initiale du sprite
-
+gt
 
 mon_sprite = MonSprite()
 sprites = pygame.sprite.Group(mon_sprite)
