@@ -8,3 +8,4 @@ class Informatique:
     def __init__(self, attaque, vie):
         self.attaque_base = attaque
         self.vie_base = vie
+        dsfdfdfd
