@@ -46,5 +46,3 @@ Choses à faire (par ordre de priorité) :
 -Sprite des personnages secondaires
 
 -Sound Design
-
-Test
