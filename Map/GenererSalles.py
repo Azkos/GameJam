@@ -11,7 +11,7 @@ largeur, hauteur = 800, 600
 fenetre = pygame.display.set_mode((largeur, hauteur))
 
 # Charger la carte Tiled
-carte = pytmx.load_pygame("") # Mettre La premiere carte
+carte = pytmx.util_pygame.load_pygame('PycharmProjects/Gamejam/Map/SallePrincipale.tmx')
 
 # Boucle principale
 running = True
@@ -21,14 +21,13 @@ while running:
             running = False
 
     # Afficher la carte Tiled
-    for layer in carte.layers:
-        if layer.visible:
+    for layer in carte.visible_layers:
             for x, y, gid in layer:
                 tile = carte.get_tile_image_by_gid(gid)
                 if tile:
                     fenetre.blit(tile, (x * carte.tilewidth, y * carte.tileheight))
 
-    pygame.display.flip()
+    pygame.display.update()
 
 # Quitter Pygame
 pygame.quit()
