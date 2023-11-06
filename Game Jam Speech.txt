@@ -31,6 +31,20 @@ Fontenas pour acheter de l'equipement.
 On sort du monde parallèle pour aller en cours et on voit un truc du monde parallèle dans le monde réel.
 
 
+Les différentes classes
+-----------------------------------------------------------|
+    NOM      |    ATTAQUE  |     VIE   |  COMPETENCE       |
+-----------------------------------------------------------|
+Informatique |   Moyenne   |  Moyenne  | Tape plus vite    |
+-----------------------------------------------------------|
+Juridique    |   faible    |  élévée   | endors les ennemis|
+-----------------------------------------------------------|
+
+
+
+
+
+
 Choses à faire (par ordre de priorité) :
 
 -Sprite du personnage principal, des monstres.
