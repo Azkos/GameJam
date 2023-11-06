@@ -1,12 +1,12 @@
-# Création de la classe "informatique"
-
 import pygame
 
-class Personne:
 
-    # Un personnage est défini par de l'attaque et de la vie
-    def __init__(self, attaque, vie, competence):
+class Personne:
+    # Un personnage est défini par de l'attaque, de la vie, une competence, un sprite et un genre
+    def __init__(self, attaque, vie, competence, image_path, genre):
         self.attaque_base = attaque
         self.vie_base = vie
         self.competence_base = competence
-
+        self.image = pygame.image.load(image_path)
+        self.rect = self.image.get_rect()
+        self.genre = genre
