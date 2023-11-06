@@ -52,6 +52,13 @@ Choses à faire (par ordre de priorité) :
 -Système de génération des salles
 
 -Système de combat
+
+    Caractérisé par un tempo, le joueur principal, l'ennemi,
+    test de fin de combat,
+    un script de lancement du combat: démarre le tempo, initialise la vie des deux combattant, et lance le premier tour
+    à chaque tour, on esquive ou on frappe aléatoirement (si deux esquive à la suite, on frappe forcément au prochain coup)
+    il faut appuyer le plus précisément possible en rythme avec le tempo avec un indicateur visuel.
+
     On doit attaquer ou esquiver en rythme, plus on est précis et plus on mettre de dégat et mon on en prendra.
     Compétence spéciale pour chaque classe
         -Info : Hacking -> permet d'esquiver automatiquement les attaques pendant un certain temps
