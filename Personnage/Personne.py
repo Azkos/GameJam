@@ -9,3 +9,9 @@ class Personne:
         self.competence_base = competence
         self.image = pygame.image.load(image_path)
         self.rect = self.image.get_rect()
+
+    #TODO : infliger les dégats selon la précision
+    #def damage(self, adversaire):
+
+    #TODO :
+    #def soin(self, montant):
