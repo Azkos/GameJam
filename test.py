@@ -17,7 +17,7 @@ noir = (0, 0, 0)
 font = pygame.font.Font(None, 36)
 
 # Chargez l'image d'arrière-plan
-fond = pygame.image.load("image/v_iut2-rentree-2023_1696500078894-jpg (2)_120x80.png")  # Remplacez par le chemin de votre image d'arrière-plan
+fond = pygame.image.load("image/v_iut2-rentree-2023_1696500078894-jpg (2)_120x80.png")
 fond = pygame.transform.scale(fond, (largeur, hauteur))
 
 # Texte de l'écran de titre
@@ -28,22 +28,22 @@ jouer_texte = font.render("Appuyez sur une touche pour jouer", True, blanc)
 pygame.mixer.music.load('Musique/menu.mp3')
 pygame.mixer.music.play(-1)
 
-# Chargez votre propre image de sprite
-votre_sprite = pygame.image.load("sprite/perso-princ.png")  # Remplacez par le chemin de votre image de sprite
-votre_sprite = pygame.transform.scale(votre_sprite, (50, 50))  # Redimensionnez le sprite si nécessaire
+# Chargez vos images de sprite pour les états "chara-walk1" et "chara-walk2"
+sprite_walk1 = pygame.image.load("sprite/chara-walk1.png")
+sprite_walk2 = pygame.image.load("sprite/chara-walk2.png")
 
-# Créez un objet sprite pour votre sprite personnalisé
+
+# Créez un objet sprite avec l'état "chara-walk1"
 class MonSprite(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = votre_sprite
+        self.image = sprite_walk1
         self.rect = self.image.get_rect()
-        self.rect.center = (largeur // 2, hauteur // 2)  # Position initiale de votre sprite
+        self.rect.center = (largeur // 2, hauteur // 2)  # Position initiale du sprite
 
-# Créez un groupe de sprites
-sprites = pygame.sprite.Group()
+
 mon_sprite = MonSprite()
-sprites.add(mon_sprite)
+sprites = pygame.sprite.Group(mon_sprite)
 
 # Boucle principale pour l'écran de titre
 en_jeu = False
@@ -70,6 +70,8 @@ while not en_jeu:
 
 # Boucle de jeu
 en_jeu = True
+direction = "stop"  # Direction de déplacement du sprite
+
 while en_jeu:
     for evenement in pygame.event.get():
         if evenement.type == pygame.QUIT:
@@ -77,22 +79,35 @@ while en_jeu:
 
     # Logique de jeu et affichage ici
 
-    # Mise à jour de la position de votre sprite en fonction des entrées de l'utilisateur
+    # Mise à jour de la position du sprite en fonction des entrées de l'utilisateur
     touches = pygame.key.get_pressed()
-    vitesse = 1
+
     if touches[pygame.K_LEFT]:
-        mon_sprite.rect.x -= vitesse
-    if touches[pygame.K_RIGHT]:
-        mon_sprite.rect.x += vitesse
-    if touches[pygame.K_UP]:
-        mon_sprite.rect.y -= vitesse
-    if touches[pygame.K_DOWN]:
-        mon_sprite.rect.y += vitesse
+        mon_sprite.rect.x -= 2  # Déplacer le sprite vers la gauche
+        direction = "left"
+    elif touches[pygame.K_RIGHT]:
+        mon_sprite.rect.x += 2  # Déplacer le sprite vers la droite
+        direction = "right"
+    elif touches[pygame.K_UP]:
+        mon_sprite.rect.y -= 2  # Déplacer le sprite vers le haut
+        direction = "up"
+    elif touches[pygame.K_DOWN]:
+        mon_sprite.rect.y += 2  # Déplacer le sprite vers le bas
+        direction = "down"
+    else:
+        direction = "stop"
+
+    # Changer l'image du sprite en alternant entre "chara-walk1" et "chara-walk2"
+    if direction != "stop":
+        if mon_sprite.image == sprite_walk1:
+            mon_sprite.image = sprite_walk2
+        else:
+            mon_sprite.image = sprite_walk1
 
     # Afficher l'arrière-plan du jeu
     fenetre.blit(fond, (0, 0))
 
-    # Afficher votre sprite
+    # Afficher le sprite
     sprites.draw(fenetre)
 
     pygame.display.flip()
