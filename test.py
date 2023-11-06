@@ -32,6 +32,9 @@ pygame.mixer.music.play(-1)
 sprite_walk1 = pygame.image.load("sprite/chara-walk1.png")
 sprite_walk2 = pygame.image.load("sprite/chara-walk2.png")
 
+# Redimensionnez le sprite à la moitié de sa taille d'origine
+sprite_walk1 = pygame.transform.scale(sprite_walk1, (sprite_walk1.get_width() // 2, sprite_walk1.get_height() // 2))
+sprite_walk2 = pygame.transform.scale(sprite_walk2, (sprite_walk2.get_width() // 2, sprite_walk2.get_height() // 2))
 
 # Créez un objet sprite avec l'état "chara-walk1"
 class MonSprite(pygame.sprite.Sprite):
@@ -41,9 +44,11 @@ class MonSprite(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.center = (largeur // 2, hauteur // 2)  # Position initiale du sprite
 
-
 mon_sprite = MonSprite()
 sprites = pygame.sprite.Group(mon_sprite)
+
+# Vitesse de déplacement du sprite
+vitesse = 1
 
 # Boucle principale pour l'écran de titre
 en_jeu = False
@@ -70,7 +75,7 @@ while not en_jeu:
 
 # Boucle de jeu
 en_jeu = True
-direction = "stop"  # Direction de déplacement du sprite
+direction = (0, 0)  # Direction de déplacement du sprite (horizontal, vertical)
 
 while en_jeu:
     for evenement in pygame.event.get():
@@ -83,26 +88,29 @@ while en_jeu:
     touches = pygame.key.get_pressed()
 
     if touches[pygame.K_LEFT]:
-        mon_sprite.rect.x -= 2  # Déplacer le sprite vers la gauche
-        direction = "left"
+        direction = (-vitesse, direction[1])  # Déplacer le sprite vers la gauche
     elif touches[pygame.K_RIGHT]:
-        mon_sprite.rect.x += 2  # Déplacer le sprite vers la droite
-        direction = "right"
-    elif touches[pygame.K_UP]:
-        mon_sprite.rect.y -= 2  # Déplacer le sprite vers le haut
-        direction = "up"
-    elif touches[pygame.K_DOWN]:
-        mon_sprite.rect.y += 2  # Déplacer le sprite vers le bas
-        direction = "down"
+        direction = (vitesse, direction[1])  # Déplacer le sprite vers la droite
     else:
-        direction = "stop"
+        direction = (0, direction[1])
+
+    if touches[pygame.K_UP]:
+        direction = (direction[0], -vitesse)  # Déplacer le sprite vers le haut
+    elif touches[pygame.K_DOWN]:
+        direction = (direction[0], vitesse)  # Déplacer the sprite vers le bas
+    else:
+        direction = (direction[0], 0)
 
     # Changer l'image du sprite en alternant entre "chara-walk1" et "chara-walk2"
-    if direction != "stop":
+    if direction != (0, 0):
         if mon_sprite.image == sprite_walk1:
             mon_sprite.image = sprite_walk2
         else:
             mon_sprite.image = sprite_walk1
+
+    # Limiter le déplacement du sprite aux bordures de l'écran
+    mon_sprite.rect.x = max(0, min(mon_sprite.rect.x + direction[0], largeur - mon_sprite.rect.width))
+    mon_sprite.rect.y = max(0, min(mon_sprite.rect.y + direction[1], hauteur - mon_sprite.rect.height))
 
     # Afficher l'arrière-plan du jeu
     fenetre.blit(fond, (0, 0))
