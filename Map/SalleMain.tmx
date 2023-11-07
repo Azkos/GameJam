@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="left-up" width="25" height="19" tilewidth="32" tileheight="32" infinite="0" nextlayerid="11" nextobjectid="1">
  <tileset firstgid="1" name="Sol" tilewidth="32" tileheight="32" tilecount="450" columns="25">
-  <image source="w_rev-sol_faus_industry_tiles_600_concrete.jpg" trans="7e7e8f" width="800" height="599"/>
+  <image source="Terre.jpg" trans="7e7e8f" width="800" height="599"/>
  </tileset>
  <tileset firstgid="451" name="Mur " tilewidth="32" tileheight="32" tilecount="391" columns="17">
-  <image source="Room_Builder_free_32x32.png" trans="7e7e8f" width="544" height="736"/>
+  <image source="Room.png" trans="7e7e8f" width="544" height="736"/>
  </tileset>
  <tileset firstgid="842" name="Escalier" tilewidth="32" tileheight="32" tilecount="1424" columns="16">
-  <image source="Interiors_free_32x32.png" width="512" height="2848"/>
+  <image source="Interieur.png" width="512" height="2848"/>
  </tileset>
  <tileset firstgid="2266" name="Meubles" tilewidth="32" tileheight="32" tilecount="576" columns="24">
-  <image source="school_tileb.png" width="768" height="768"/>
+  <image source="School.png" width="768" height="768"/>
  </tileset>
  <tileset firstgid="2842" name="Poteau" tilewidth="32" tileheight="32" tilecount="36" columns="6">
-  <image source="Untitled 11-06-2023 03-40-41.png" width="192" height="192"/>
+  <image source="Poteau.png" width="192" height="192"/>
  </tileset>
  <layer id="1" name="Sol1" width="25" height="19">
   <data encoding="base64" compression="zlib">
