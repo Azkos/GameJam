@@ -80,7 +80,7 @@ def main():
                         fenetre.blit(tile, (x * carte.tilewidth, y * carte.tileheight))
 
             sprites.draw(fenetre)
-        clock.tick(6)
+        clock.tick(60)
         print(clock.get_fps())
 
         pygame.display.flip()
