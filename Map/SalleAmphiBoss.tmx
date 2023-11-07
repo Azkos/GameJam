@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="left-up" width="25" height="19" tilewidth="32" tileheight="32" infinite="0" nextlayerid="11" nextobjectid="1">
+ <tileset firstgid="1" name="MurAmphi" tilewidth="32" tileheight="32" tilecount="266" columns="19">
+  <image source="Ajouter1.png" width="628" height="475"/>
+ </tileset>
+ <tileset firstgid="267" name="TileSetEcole" tilewidth="32" tileheight="32" tilecount="576" columns="24">
+  <image source="school_tileb.png" width="768" height="768"/>
+ </tileset>
+ <tileset firstgid="843" name="Tableau" tilewidth="32" tileheight="32" tilecount="45" columns="9">
+  <image source="tableau.png" trans="282828" width="306" height="176"/>
+ </tileset>
+ <tileset firstgid="888" name="Scene" tilewidth="32" tileheight="32" tilecount="1424" columns="16">
+  <image source="Interiors_free_32x32.png" width="512" height="2848"/>
+ </tileset>
+ <tileset firstgid="2312" name="Scene" tilewidth="32" tileheight="32" tilecount="64" columns="8">
+  <image source="Scene.png" width="256" height="256"/>
+ </tileset>
+ <tileset firstgid="2376" name="TileSet" tilewidth="32" tileheight="32" tilecount="900" columns="30">
+  <image source="Crazy.png" width="960" height="960"/>
+ </tileset>
+ <layer id="1" name="Sol1" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJwLYGBgCBjFo3gUj+JRPIpHMc0wAChElHE=
+  </data>
+ </layer>
+ <layer id="2" name="Mur1" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJzzY2Bg8KMx9gViJhpiXyQ7aAFG7Ri1Y9SOUTtG7RhYO2hZfxTTAQMArQ8drA==
+  </data>
+ </layer>
+ <layer id="3" name="Tableau2" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYMANvJkZGHyA2BeI/ZBwIBIOZsZjABEgFqg/lwDOo9AOG04GhgKgGYVAXATExUi4FIjLgJiHE4KpBaZxYYqZUNF8XIAedoyCUTAKRsEoIA0AAOxADLw=
+  </data>
+ </layer>
+ <layer id="8" name="Chaise4" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUDBbwnw2BYaCMa+DcMwpGwSigDgAArbsDkA==
+  </data>
+ </layer>
+ <layer id="9" name="Tile Layer 6" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYICAe1wMDPeB+AEQP+RioAn4AzT3LxD/o5H5ktwMDFJALA3EMkAsy00beyyA5lpCzbamkR0wEAE0PxLJjqlUDLsSoLmlQFwGxOU09MdkoNlTgHgqmh0K7LSzEwYM6GDHKBgFo2AUEAIAT78N6g==
+  </data>
+ </layer>
+ <layer id="10" name="Feuillage5" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYKA/aONiYGjnIl1fNDcDQwwQx3LjVnMQaO4SMsyGgUqg2VVAXI3HjlEwCugJctkH2gWjYBSMAkoBAFiCBdM=
+  </data>
+ </layer>
+ <layer id="7" name="Scene3" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJzVk8suBEEUhk+aqHQJgpC4JjbWJFZYDCt2bUYy47KxEyQMZmbJM8y8Hl6Fv1Sf9Onq6u5KsHCSL1Vd/f916tSFyB+b4yU/fqj9jRxHiuhY1XvimEiD+zGiB9AFj+BJ0AN9MABT0E7H1tvB/BfgsibPLPRzYD6AHbAAFtMc15j7Ftz9UY6rgD3iWIJ+GawEsArWwDro1uQYThI1oDkA+1G5biOdh7UyduHbi6r9CTwn4NTRbGEsQTvSRNvKtqzNrVNbXL+MN/x7Bx9CM9B+PieyfpXfjWZk15CIsba2mDm5b5hJa2vrvL8V2VrKwvjY69Zhxrl/Lt6Ar46kMHNxHbyfRtvXll5KB9yIN8Dj7K87j0TA33x/ys5FnknoebSifA6+P993iWxrOFRZf6Qzfci9OtMWWZdv3U1VrMPdh6o65Hnw3WHcsRfkelWZf6irc5j1P3vqCCG0jv8cX4z9WFo=
+  </data>
+ </layer>
+</map>
