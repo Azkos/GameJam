@@ -5,13 +5,13 @@ import pytmx
 pygame.init()
 
 # Dimensions de la fenêtre
-largeur, hauteur = 800, 600
+largeur, hauteur = 800, 608
 
 # Création de la fenêtre
 fenetre = pygame.display.set_mode((largeur, hauteur))
 
 # Charger la carte Tiled
-carte = pytmx.util_pygame.load_pygame('PycharmProjects/Gamejam/Map/SallePrincipale.tmx')
+carte = pytmx.util_pygame.load_pygame('SalleMain.tmx')
 
 # Boucle principale
 running = True
