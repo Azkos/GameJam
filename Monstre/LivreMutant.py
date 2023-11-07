@@ -1,4 +1,4 @@
-import Ennemi
+from Monstre import Ennemi
 
 
 class LivreMutant(Ennemi):

@@ -1,8 +1,12 @@
 import pygame
 import sys
 import pytmx
+
 from Personnage.Informatique import Informatique
 from Personnage.Sprite import Sprite
+import Action.Combat as comb
+from Monstre.Ennemi import Ennemi
+from Monstre.ProfZombie import ProfZombie
 
 
 def main():
@@ -50,6 +54,7 @@ def main():
                 if scene_actuelle == "titre":
                     scene_actuelle = "jeu"  # Passer à la scène de jeu lorsque n'importe quelle touche est enfoncée
 
+
         if scene_actuelle == "titre":
             # Afficher l'arrière-plan de l'écran de titre
             fenetre.blit(fond, (0, 0))
@@ -81,7 +86,6 @@ def main():
 
             sprites.draw(fenetre)
         clock.tick(60)
-        print(clock.get_fps())
 
         pygame.display.flip()
 
