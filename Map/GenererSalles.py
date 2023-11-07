@@ -11,7 +11,7 @@ largeur, hauteur = 800, 608
 fenetre = pygame.display.set_mode((largeur, hauteur))
 
 # Charger la carte Tiled
-carte = pytmx.util_pygame.load_pygame('SalleMain.tmx')
+carte = pytmx.util_pygame.load_pygame('SalleAmphiBoss.tmx')
 
 # Boucle principale
 running = True
