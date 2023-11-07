@@ -15,3 +15,5 @@ class Personne:
 
     #TODO :
     #def soin(self, montant):
+
+
