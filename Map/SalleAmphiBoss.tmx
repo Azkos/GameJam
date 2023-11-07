@@ -1,21 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="left-up" width="25" height="19" tilewidth="32" tileheight="32" infinite="0" nextlayerid="11" nextobjectid="1">
  <tileset firstgid="1" name="MurAmphi" tilewidth="32" tileheight="32" tilecount="266" columns="19">
-  <image source="Ajouter1.png" width="628" height="475"/>
+  <properties>
+   <property name="Solid" type="bool" value="true"/>
+  </properties>
+  <image source="Terre.png" width="628" height="475"/>
  </tileset>
  <tileset firstgid="267" name="TileSetEcole" tilewidth="32" tileheight="32" tilecount="576" columns="24">
-  <image source="school_tileb.png" width="768" height="768"/>
+  <properties>
+   <property name="Solid" type="bool" value="true"/>
+  </properties>
+  <image source="School.png" width="768" height="768"/>
  </tileset>
  <tileset firstgid="843" name="Tableau" tilewidth="32" tileheight="32" tilecount="45" columns="9">
-  <image source="tableau.png" trans="282828" width="306" height="176"/>
+  <properties>
+   <property name="Solid" type="bool" value="true"/>
+  </properties>
+  <image source="Tableau.png" trans="282828" width="306" height="176"/>
  </tileset>
  <tileset firstgid="888" name="Scene" tilewidth="32" tileheight="32" tilecount="1424" columns="16">
-  <image source="Interiors_free_32x32.png" width="512" height="2848"/>
+  <properties>
+   <property name="Solid" type="bool" value="true"/>
+  </properties>
+  <image source="Interieur.png" width="512" height="2848"/>
  </tileset>
  <tileset firstgid="2312" name="Scene" tilewidth="32" tileheight="32" tilecount="64" columns="8">
   <image source="Scene.png" width="256" height="256"/>
  </tileset>
  <tileset firstgid="2376" name="TileSet" tilewidth="32" tileheight="32" tilecount="900" columns="30">
+  <properties>
+   <property name="Solid" type="bool" value="true"/>
+  </properties>
   <image source="Crazy.png" width="960" height="960"/>
  </tileset>
  <layer id="1" name="Sol1" width="25" height="19">

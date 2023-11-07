@@ -1,19 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="left-up" width="25" height="19" tilewidth="32" tileheight="32" infinite="0" nextlayerid="11" nextobjectid="1">
  <tileset firstgid="1" name="Sol" tilewidth="32" tileheight="32" tilecount="450" columns="25">
-  <image source="Terre.jpg" trans="7e7e8f" width="800" height="599"/>
+  <properties>
+   <property name="Solid" type="bool" value="false"/>
+  </properties>
+  <image source="Sol.jpg" trans="7e7e8f" width="800" height="599"/>
  </tileset>
  <tileset firstgid="451" name="Mur " tilewidth="32" tileheight="32" tilecount="391" columns="17">
+  <properties>
+   <property name="Solid" type="bool" value="true"/>
+  </properties>
   <image source="Room.png" trans="7e7e8f" width="544" height="736"/>
  </tileset>
  <tileset firstgid="842" name="Escalier" tilewidth="32" tileheight="32" tilecount="1424" columns="16">
+  <properties>
+   <property name="Solid" type="bool" value="false"/>
+  </properties>
   <image source="Interieur.png" width="512" height="2848"/>
  </tileset>
  <tileset firstgid="2266" name="Meubles" tilewidth="32" tileheight="32" tilecount="576" columns="24">
+  <properties>
+   <property name="Solid" type="bool" value="true"/>
+  </properties>
   <image source="School.png" width="768" height="768"/>
  </tileset>
  <tileset firstgid="2842" name="Poteau" tilewidth="32" tileheight="32" tilecount="36" columns="6">
+  <properties>
+   <property name="Solid" type="bool" value="true"/>
+  </properties>
   <image source="Poteau.png" width="192" height="192"/>
+ </tileset>
+ <tileset firstgid="2878" name="Interiors_free_32x32_dg" tilewidth="32" tileheight="32" tilecount="1424" columns="89">
+  <properties>
+   <property name="Solid" type="bool" value="true"/>
+  </properties>
+  <image source="Interiors_free_32x32_dg.png" trans="282828" width="2848" height="512"/>
+  <tile id="0">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </tile>
  </tileset>
  <layer id="1" name="Sol1" width="25" height="19">
   <data encoding="base64" compression="zlib">
@@ -52,7 +78,7 @@
  </layer>
  <layer id="9" name="Poteau3" width="25" height="19">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFowABZLgZGGS5CYuRCxSB5igBsTI3fjFKgDrQHA0g1uTGLzbY7TAGmmMCxKbc+MUoBVZAs6yBmJsZgWFi1AKwNIRsB63SFbId9EpX+kPIDnqnK0JiIwUAALpbDZ8=
+   eJxjYBgFowABZLgZGGS5CYuRCxSB5igBsTI3fjFKgDrQHA0g1uTGLzbY7TAGmmMCxKbc+MUoBVZAs6xBmAGBYWLUArA0hGwHrdIVsh30Slf6Q8gOeqcrQmIjBQAAbRkPNA==
   </data>
  </layer>
 </map>
