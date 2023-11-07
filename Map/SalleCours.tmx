@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="left-up" width="25" height="19" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="1">
+ <tileset firstgid="1" name="TableauNoir" tilewidth="32" tileheight="32" tilecount="40" columns="5">
+  <properties>
+   <property name="Solid" type="bool" value="true"/>
+  </properties>
+  <image source="TableauNoir.png" trans="282828" width="170" height="272"/>
+ </tileset>
+ <tileset firstgid="41" name="Room" tilewidth="32" tileheight="32" tilecount="391" columns="17">
+  <image source="Room.png" width="544" height="736"/>
+ </tileset>
+ <tileset firstgid="432" name="Interiors_free_32x32_gd" tilewidth="32" tileheight="32" tilecount="1424" columns="89">
+  <image source="Interiors_free_32x32_gd.png" width="2848" height="512"/>
+ </tileset>
+ <tileset firstgid="1856" name="Interiors_free_32x32_dg" tilewidth="32" tileheight="32" tilecount="1424" columns="89">
+  <image source="Interiors_free_32x32_dg.png" width="2848" height="512"/>
+ </tileset>
+ <tileset firstgid="3280" name="Interieur" tilewidth="32" tileheight="32" tilecount="1424" columns="16">
+  <image source="Interieur.png" width="512" height="2848"/>
+ </tileset>
+ <layer id="1" name="Mur1" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJyLZGBgiKIhjgbiLCDOpiHOQbKjkJH6eNSOUTtG7Ri1Y9SOgbWDHvUHLe0AAH4vzX4=
+  </data>
+ </layer>
+ <layer id="2" name="Meubles3" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFgwkwAjEzFLPSyA42IGYHYg4g5qKRHdxAzAPEvEDMT2M7hIBYhMZ2iNPBDhk62KEIxJI0skMeyQ45OtihTCM7VIBYDYo1aGTHKBh5AAAx7gLn
+  </data>
+ </layer>
+ <layer id="6" name="BibliothequeG2" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJztjTESQDAUBV+TnAotDogWB4y0obGXeEPxd2bbXSn4ii5JPQ7J91hor7gZH4X2hdX4GLM04Zx9j532gafx0Wjf+BgfQRD8jxclDwtT
+  </data>
+ </layer>
+ <layer id="5" name="Sol1" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFpIIKDgaGSg5M8RncDAzPuIhnYwOXsZiLDD4i6SeGTawdZUA95UBcwY3ffmKBDiem2Hmg2XJAfJGbdmEFs0Oemzphhc8f8lQKK3R/5HFR346B8Ae6HbSKcw0eiB1aPLSL80ag2U1A3MyDWx854ALQPxeB+BKav6gRVjCgCfSPFhBro/mLGmE1CogHAFgfTgc=
+  </data>
+ </layer>
+ <layer id="7" name="Fenetre3" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYEAFi3kZGJbwMmAF6HK/BBgYfgsQrx8GNgPlt+BQgy7HJcjAwC1IvP5RMApGwSgYBaNgsAEAOyUK8w==
+  </data>
+ </layer>
+</map>
