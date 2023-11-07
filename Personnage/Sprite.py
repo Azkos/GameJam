@@ -16,14 +16,20 @@ class Sprite(pygame.sprite.Sprite):
         self.image = sprite_walk1
         self.rect = self.image.get_rect()
         self.rect.center = (largeur // 2, hauteur // 2)  # Position initiale du sprite
-
+        self.facing_left = False
     def deplacement(self, vitesse):
         touches = pygame.key.get_pressed()
         direction = [0, 0]
 
         if touches[pygame.K_LEFT]:
+            if not self.facing_left:  # Si le sprite regarde vers la droite, inverser l'image une fois
+                self.image = pygame.transform.flip(self.image, True, False)
+                self.facing_left = True
             direction[0] = -vitesse  # Déplacer le sprite vers la gauche
         elif touches[pygame.K_RIGHT]:
+            if self.facing_left:  # Si le sprite regarde vers la gauche, rétablir l'image normale
+                self.image = pygame.transform.flip(self.image, True, False)
+                self.facing_left = False
             direction[0] = vitesse  # Déplacer le sprite vers la droite
 
         if touches[pygame.K_UP]:
@@ -31,6 +37,6 @@ class Sprite(pygame.sprite.Sprite):
         elif touches[pygame.K_DOWN]:
             direction[1] = vitesse  # Déplacer le sprite vers le bas
 
-        # Mettre à jour la position du sprite en fonction de la direction
+            # Mettre à jour la position du sprite en fonction de la direction
         self.rect.x += direction[0]
         self.rect.y += direction[1]
