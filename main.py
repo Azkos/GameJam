@@ -22,7 +22,7 @@ fond = pygame.transform.scale(fond, (largeur, hauteur))
 
 # Texte de l'écran de titre
 titre_texte = font.render("Mon Jeu", True, blanc)
-jouer_texte = font.render("Appuyez sur une touche pour passer à la prochaine scène", True, blanc)
+jouer_texte = font.render("Appuyez sur une touche pour commencer le jeu", True, blanc)
 
 # Musique de l'écran de titre
 pygame.mixer.music.load('Musique/menu.mp3')
@@ -53,6 +53,7 @@ while en_jeu:
         fenetre.blit(jouer_texte, jouer_rect)
 
     elif scene_actuelle == "jeu":
+        pygame.mixer.music.stop()
         fenetre.fill(blanc)  # Fond blanc pour la scène de jeu
 
     pygame.display.flip()

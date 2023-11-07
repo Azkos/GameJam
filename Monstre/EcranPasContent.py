@@ -1,10 +1,6 @@
-import pygame
+import Ennemi
 
 
-class EcranPasContent:
-    # Un personnage est défini par de l'attaque, de la vie, une competence, un sprite et un genre
-    def __init__(self, attaque, vie , image_path):
-        self.attaque_base = attaque
-        self.vie_base = vie
-        self.image = pygame.image.load(image_path)
-        self.rect = self.image.get_rect()
+class EcranPasContent(Ennemi):
+    def __init__(self):
+        super().__init__(attaque=18, vie=42, difficulte=1, image_path="sprit/Mob.png")

@@ -1,4 +1,4 @@
-import Personne
+from Personnage.Personne import Personne
 
 
 class Informatique(Personne):

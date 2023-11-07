@@ -1,10 +1,6 @@
-import pygame
+import Ennemi
 
 
-class LivreMutant:
-    # Un personnage est défini par de l'attaque, de la vie, une competence, un sprite et un genre
-    def __init__(self, attaque, vie, image_path):
-        self.attaque_base = attaque
-        self.vie_base = vie
-        self.image = pygame.image.load(image_path)
-        self.rect = self.image.get_rect()
+class LivreMutant(Ennemi):
+    def __init__(self):
+        super().__init__(attaque=15, vie=35, difficulte=1, image_path="sprit/livre.png")
