@@ -2,7 +2,11 @@ import pygame
 
 largeur = 600
 hauteur = 800
-sprite_walk1 = pygame.image.load("sprite/pinguin.png")
+sprite_walk1 = pygame.image.load("sprite/chara-walk1.png")
+sprite_walk2 = pygame.image.load("sprite/chara-walk2.png")
+
+sprite_walk1 = pygame.transform.scale(sprite_walk1, (sprite_walk1.get_width() // 5, sprite_walk1.get_height() // 5))
+sprite_walk2 = pygame.transform.scale(sprite_walk2, (sprite_walk2.get_width() // 2, sprite_walk2.get_height() // 2))
 
 
 class Sprite(pygame.sprite.Sprite):
@@ -30,4 +34,3 @@ class Sprite(pygame.sprite.Sprite):
         # Mettre à jour la position du sprite en fonction de la direction
         self.rect.x += direction[0]
         self.rect.y += direction[1]
-

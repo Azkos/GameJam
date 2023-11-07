@@ -63,7 +63,6 @@ def main():
 
         elif scene_actuelle == "jeu":
             pygame.mixer.music.stop()
-            fenetre.fill(blanc)
 
 
             mon_sprite.deplacement(5)
@@ -79,9 +78,9 @@ def main():
                     tile = carte.get_tile_image_by_gid(gid)
                     if tile:
                         fenetre.blit(tile, (x * carte.tilewidth, y * carte.tileheight))
-            pygame.display.update()
+
             sprites.draw(fenetre)
-        clock.tick(20)
+        clock.tick(60)
         print(clock.get_fps())
 
         pygame.display.flip()
