@@ -1,5 +1,6 @@
 import random
 import pygame
+import Personnage.Personne
 
 
 class Combat:
@@ -13,13 +14,13 @@ class Combat:
         self.nbEsquive = 0
         self.ecranCombat = pygame.Surface((600, 400))
         self.ecranCombat.fill("blue")
-        fenetre.blit(self.ecranCombat)
+        fenetre.blit(self.ecranCombat, (50, 50))
 
     def combat(self):
         # met en place un tour de combat. Si il y a eu 2 esquives de suite, lance une attaque
         if self.est_fini():
             if(self.ennemi.vie_base == 0):
-                print("le joueur à gagné")
+                print("tu as gagné le combat!")
             else:
                 print("tu as perdu!")
         else:
@@ -40,9 +41,9 @@ class Combat:
         temps_boucle = (60000 // Combat.DIFF[self.difficulte])
         temps_phase = temps_boucle // 4
         boucle = pygame.time.Clock()
-        rouge = pygame.image.load("../sprite/indicateurRougex8.png")
-        orange = pygame.image.load("../sprite/indicateurOrangex8.png")
-        vert = pygame.image.load("../sprite/indicateurVertx8.png")
+        rouge = pygame.image.load("sprite/indicateurRougex8.png")
+        orange = pygame.image.load("sprite/indicateurOrangex8.png")
+        vert = pygame.image.load("sprite/indicateurVertx8.png")
         it = 0
         indicateur = [rouge, orange, vert]
         self.ecranCombat.blit(indicateur[it], (50, 50))

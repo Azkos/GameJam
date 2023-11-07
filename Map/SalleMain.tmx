@@ -46,7 +46,7 @@
  </tileset>
  <layer id="1" name="Sol1" width="25" height="19">
   <data encoding="base64" compression="zlib">
-   eJxjY2ZgYCcBwwCx6jmAmAuIuUnAMECseh4kO2AgAw9GB/jUZjAMXjtIxeh2UNPsUTuGhx3Wo3YMqvgYtYP0+oNUDLJDHIglaIglgRgAoFGDMw==
+   eJxjY2ZgYCcBwwCx6jmAmAuIuUnAMECseh4kO2AgAw82YUHF+NRmMAxeO0jF6HZQ0+xRO4aHHdajdgyq+Bi1g/T6g1QMskMciCVoiCWBGACQ1oTz
   </data>
  </layer>
  <layer id="4" name="Meubles2" width="25" height="19">
