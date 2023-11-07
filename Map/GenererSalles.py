@@ -11,7 +11,7 @@ largeur, hauteur = 800, 608
 fenetre = pygame.display.set_mode((largeur, hauteur))
 
 # Charger la carte Tiled
-carte = pytmx.util_pygame.load_pygame('SalleCours.tmx')
+carte = pytmx.util_pygame.load_pygame('SalleMain.tmx')
 
 # Boucle principale
 running = True
