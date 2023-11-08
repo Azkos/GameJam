@@ -108,22 +108,8 @@ def main():
             nom_personnage_texte = font.render(nom_personnage, True, blanc)
             fenetre.blit(nom_personnage_texte, (10, 10))  # Position du texte
 
-            pingouin = pygame.Rect(390, 365, 32, 32)
-            if mon_sprite.rect.colliderect(pingouin):
-                dialogue_actif = True
-
-            if dialogue_actif:
-                afficher_dialogue(fenetre, font, dialogues, dialogue_index, largeur, hauteur, blanc)
-
-                # Détecter la collision avec les portes et changer de carte
-                x_personnage, y_personnage = mon_sprite.rect.x // carte.tilewidth, mon_sprite.rect.y // carte.tileheight
-                if (x_personnage, y_personnage) in portes_destinations:
-                    nom_carte, position = portes_destinations[(x_personnage, y_personnage)]
-                    # carte_actuelle = cartes[nom_carte]
-                    mon_sprite.rect.x, mon_sprite.rect.y = position
-
-            # Affichage du personnage
             sprites.draw(fenetre)
+        print(clock)
         clock.tick(60)
 
         pygame.display.flip()
