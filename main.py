@@ -4,10 +4,7 @@ import pytmx
 
 from Personnage.Informatique import Informatique
 from Personnage.Sprite import Sprite
-import Action.Combat as comb
-import Action.Dancing as dan
-from Monstre.Ennemi import Ennemi
-from Monstre.ProfZombie import ProfZombie
+from Map.GenererSalles import GenererSalles
 
 
 def afficher_dialogue(fenetre, font, dialogues, dialogue_index, largeur, hauteur, blanc):
@@ -17,9 +14,13 @@ def afficher_dialogue(fenetre, font, dialogues, dialogue_index, largeur, hauteur
     fenetre.blit(texte_dialogue, (60, hauteur - 140))
 
 def main():
+    if len(sys.argv) > 1:
+        nom_personnage = "Nom : " + sys.argv[1]
+    else:
+        nom_personnage = "Nom du personnage par défaut"
+
     # Initialisation de Pygame
     pygame.init()
-
     # Dimensions de la fenêtre
     largeur, hauteur = 800, 600
     fenetre = pygame.display.set_mode((largeur, hauteur))
@@ -31,7 +32,7 @@ def main():
     # Police de caractères
     font = pygame.font.Font(None, 36)
 
-    # Chargement de l'image d'arrière-plan pour le menu
+    # Chargez l'image d'arrière-plan pour le menu
     fond = pygame.image.load("image/v_iut2-rentree-2023_1696500078894-jpg (2)_120x80.png")
     fond = pygame.transform.scale(fond, (largeur, hauteur))
 
@@ -45,15 +46,13 @@ def main():
 
     # Variable d'état de la scène
     scene_actuelle = "titre"
-
-    # Dialogues à afficher
+    dialogue_actif = False
     dialogues = [
         "Bonjour, je suis un pingouin !",
         "C'est un beau jour pour une aventure !",
         "N'oubliez pas d'apporter votre équipement !"
     ]
     dialogue_index = 0
-    dialogue_actif = False
 
     # Création du personnage
     mon_sprite = Sprite()
@@ -123,15 +122,30 @@ def main():
                         carte_actuelle = cartes[carte_actuelle_nom]
 
         if scene_actuelle == "titre":
+            # Afficher l'arrière-plan de l'écran de titre
             fenetre.blit(fond, (0, 0))
             fenetre.blit(titre_texte, titre_texte.get_rect(center=(largeur // 2, hauteur // 2 - 50)))
             fenetre.blit(jouer_texte, jouer_texte.get_rect(center=(largeur // 2, hauteur // 2 + 50)))
 
         elif scene_actuelle == "jeu":
-            pygame.mixer.music.stop()
-            mon_sprite.deplacement(5)
-            mon_sprite.update()
 
+            pygame.mixer.music.stop()
+
+            genererSalle = GenererSalles("Map/SalleMain.tmx", fenetre, largeur, hauteur)
+            carte = genererSalle.genererSalle()
+
+            mon_sprite.deplacement(8)
+            if mon_sprite.checkCollision(carte):
+                mon_sprite.rect.x = mon_sprite.last_pos[0]
+                mon_sprite.rect.y = mon_sprite.last_pos[1]
+
+            fenetre.blit(mon_sprite.image, mon_sprite.rect)
+
+            carte = pytmx.util_pygame.load_pygame('Map/SalleMain.tmx')
+
+            # Afficher le nom du personnage en haut à gauche
+            nom_personnage_texte = font.render(nom_personnage, True, blanc)
+            fenetre.blit(nom_personnage_texte, (10, 10))  # Position du texte
             # Affichage de la carte actuelle
             if carte_actuelle:
                 for layer in carte_actuelle.visible_layers:
@@ -161,23 +175,14 @@ def main():
 
             # Affichage du personnage
             sprites.draw(fenetre)
-
-            # Empêcher le personnage de sortir de la carte
-            if mon_sprite.rect.left < 0:
-                mon_sprite.rect.left = 0
-            if mon_sprite.rect.right > largeur:
-                mon_sprite.rect.right = largeur
-            if mon_sprite.rect.top < 0:
-                mon_sprite.rect.top = 0
-            if mon_sprite.rect.bottom > hauteur:
-                mon_sprite.rect.bottom = hauteur
-
+        print(clock)
         clock.tick(60)
+
         pygame.display.flip()
 
+    # Quitter Pygame
     pygame.quit()
     sys.exit()
 
-if __name__ == "__main__":
-    main()
 
+main()

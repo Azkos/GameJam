@@ -10,13 +10,14 @@ sprite_walk2 = pygame.transform.scale(sprite_walk2, (sprite_walk2.get_width() //
 
 
 class Sprite(pygame.sprite.Sprite):
-
     def __init__(self):
         super().__init__()
         self.image = sprite_walk1
         self.rect = self.image.get_rect()
         self.rect.center = (largeur // 2, hauteur // 2)  # Position initiale du sprite
         self.facing_left = False
+        self.last_pos = (self.rect.x, self.rect.y)
+
     def deplacement(self, vitesse):
         touches = pygame.key.get_pressed()
         direction = [0, 0]
@@ -38,5 +39,18 @@ class Sprite(pygame.sprite.Sprite):
             direction[1] = vitesse  # Déplacer le sprite vers le bas
 
             # Mettre à jour la position du sprite en fonction de la direction
+        self.last_pos = (self.rect.x, self.rect.y)
         self.rect.x += direction[0]
         self.rect.y += direction[1]
+
+    def checkCollision(self, carte):
+        liste_collision = []
+
+        for object in carte.objects:
+            if object.type == "collision":
+                rect = pygame.Rect(object.x, object.y, object.width, object.height)
+                liste_collision.append(rect)
+        if self.rect.collidelist(liste_collision) > -1:
+            return True
+        else:
+            return False

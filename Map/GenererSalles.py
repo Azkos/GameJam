@@ -10,24 +10,23 @@ largeur, hauteur = 800, 608
 # Création de la fenêtre
 fenetre = pygame.display.set_mode((largeur, hauteur))
 
-# Charger la carte Tiled
-carte = pytmx.util_pygame.load_pygame('SalleMainParallele.tmx')
 
-# Boucle principale
-running = True
-while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
+class GenererSalles:
+    def __init__(self, nomFichier, fenetre, largeur, hauteur):
+        self.nomFichier = nomFichier
+        self.fenetre = fenetre
+        self.largeur = largeur
+        self.hauteur = hauteur
 
-    # Afficher la carte Tiled
-    for layer in carte.visible_layers:
-            for x, y, gid in layer:
-                tile = carte.get_tile_image_by_gid(gid)
-                if tile:
-                    fenetre.blit(tile, (x * carte.tilewidth, y * carte.tileheight))
+    def genererSalle(self):
+        carte = pytmx.util_pygame.load_pygame(self.nomFichier)
 
-    pygame.display.update()
+        # Afficher la carte Tiled
+        for layer in carte.visible_layers:
+            if isinstance(layer, pytmx.TiledTileLayer):
+                for x, y, gid in layer:
+                    tile = carte.get_tile_image_by_gid(gid)
+                    if tile:
+                        fenetre.blit(tile, (x * carte.tilewidth, y * carte.tileheight))
 
-# Quitter Pygame
-pygame.quit()
+        return carte
