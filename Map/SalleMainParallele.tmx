@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="left-up" width="25" height="19" tilewidth="32" tileheight="32" infinite="0" nextlayerid="18" nextobjectid="1">
+ <tileset firstgid="1" name="Sol" tilewidth="32" tileheight="32" tilecount="450" columns="25">
+  <properties>
+   <property name="Solid" type="bool" value="false"/>
+  </properties>
+  <image source="Sol.jpg" trans="7e7e8f" width="800" height="599"/>
+ </tileset>
+ <tileset firstgid="451" name="Mur " tilewidth="32" tileheight="32" tilecount="391" columns="17">
+  <properties>
+   <property name="Solid" type="bool" value="true"/>
+  </properties>
+  <image source="Room.png" trans="7e7e8f" width="544" height="736"/>
+ </tileset>
+ <tileset firstgid="842" name="Escalier" tilewidth="32" tileheight="32" tilecount="1424" columns="16">
+  <properties>
+   <property name="Solid" type="bool" value="false"/>
+  </properties>
+  <image source="Interieur.png" width="512" height="2848"/>
+ </tileset>
+ <tileset firstgid="2266" name="Meubles" tilewidth="32" tileheight="32" tilecount="576" columns="24">
+  <properties>
+   <property name="Solid" type="bool" value="true"/>
+  </properties>
+  <image source="School.png" width="768" height="768"/>
+ </tileset>
+ <tileset firstgid="2842" name="Poteau" tilewidth="32" tileheight="32" tilecount="36" columns="6">
+  <properties>
+   <property name="Solid" type="bool" value="true"/>
+  </properties>
+  <image source="Poteau.png" width="192" height="192"/>
+ </tileset>
+ <tileset firstgid="2878" name="Interiors_free_32x32_dg" tilewidth="32" tileheight="32" tilecount="1424" columns="89">
+  <properties>
+   <property name="Solid" type="bool" value="true"/>
+  </properties>
+  <image source="Interiors_free_32x32_dg.png" trans="282828" width="2848" height="512"/>
+  <tile id="0">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="4302" name="jp le retour" tilewidth="32" tileheight="32" tilecount="4" columns="2">
+  <image source="jp le retour.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="4306" name="Interiors_free_32x32_gd" tilewidth="32" tileheight="32" tilecount="1424" columns="89">
+  <image source="Interiors_free_32x32_gd.png" width="2848" height="512"/>
+ </tileset>
+ <tileset firstgid="5730" name="Crazy" tilewidth="32" tileheight="32" tilecount="900" columns="30">
+  <image source="Crazy.png" width="960" height="960"/>
+ </tileset>
+ <tileset firstgid="6630" name="Crazygd" tilewidth="32" tileheight="32" tilecount="900" columns="30">
+  <image source="Crazygd.png" width="960" height="960"/>
+ </tileset>
+ <tileset firstgid="7530" name="Crazydg" tilewidth="32" tileheight="32" tilecount="900" columns="30">
+  <image source="Crazydg.png" width="960" height="960"/>
+ </tileset>
+ <layer id="12" name="Sol1" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxTYWBgUBnFo3gUj+JRPIpHMc0wAHyUQs0=
+  </data>
+ </layer>
+ <layer id="13" name="Mur1" width="25" height="19">
+  <properties>
+   <property name="Solid" type="bool" value="true"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxLZ2JgyKAhzgTiCiCupCGuQrKDFqBimNhBj7AaLnYMlzinlh194rgxtexIx1OOUCvOCZVFo3YMTjsoqYOqSPAHLesoALRYYmg=
+  </data>
+ </layer>
+ <layer id="16" name="Meubles3" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFyKBIHIJpBSaKo2JqgyJxTDuI9Y80NwODDBDLcuMXo8QORaA5SkCszI1fDATIDStdoDkaQKzJjSmmz42pnpw4J9UOcoAx0BwTIDblxi9GKbACmmXNTViMWGAkAaHdkcKUmHRFCogDmh0PxKlQO0hJV8SCGqDZtUD8DYi/i+OOXz0K4lwIGFbCQCwCxKIStLHDAGiuoQSCjysNUZqujCRQ+dROV0MdAACtsyMH
+  </data>
+ </layer>
+ <layer id="17" name="Fougere3" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYIAAD0kGFIDOBwF3SexsYkGaJH4+CKRKYmcTC46JY+cvg5r1WYJ0M4m1AwYEyXC3kwwDg7MMgn8czUx0/kgGsLAqkmNgKJYjXl8DMAwbgbgJiJtpFJ7zgObOB+IFQLwQjx3LiEwjcUAz4tHM2QPk7wXifUC8n0h/4AurGqAZtWjm3ALybwPxHTLDqUACgokFxWTYAzIfFJ/xZOQ3YoCRBALXQu2YDbRvDhDPRXKvK5DtRkF6EgKaLwwNrx1Ac3YC8S4g3o1mpjOQ70KmPQZAsw2h8XENaMZ1IL6BxaxEoFgSmXGBDgilcXLifCgDAFC+Lvs=
+  </data>
+ </layer>
+ <layer id="14" name="Porte2" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAN8LAyMPCykqiJRCADNF+WxnaMRHBAkPZ2SArR3o4iOtiBDNr4aW/HfTrYMQpGwSgYOAAAstUDag==
+  </data>
+ </layer>
+ <layer id="15" name="Escalier2" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYECAy8wITCvwmBmBaQHqgeY2I+EmLPY4sjAwOAGxMxC7sJBuRz+aHZOw2BEINDcIiIOBOIRGdiQCzU2C4hQy7BgFo2AUjIJRQB8AAFbOEU0=
+  </data>
+ </layer>
+</map>
