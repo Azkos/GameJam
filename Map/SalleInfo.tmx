@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="left-up" width="25" height="19" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="1">
+ <tileset firstgid="1" name="Schoolgd" tilewidth="32" tileheight="32" tilecount="576" columns="24">
+  <image source="Schoolgd.png" width="768" height="768"/>
+ </tileset>
+ <tileset firstgid="577" name="Schooldg" tilewidth="32" tileheight="32" tilecount="576" columns="24">
+  <image source="Schooldg.png" width="768" height="768"/>
+ </tileset>
+ <tileset firstgid="1153" name="Interiors_free_32x32_dg" tilewidth="32" tileheight="32" tilecount="1424" columns="89">
+  <image source="Interiors_free_32x32_dg.png" width="2848" height="512"/>
+ </tileset>
+ <tileset firstgid="2577" name="Room" tilewidth="32" tileheight="32" tilecount="391" columns="17">
+  <image source="Room.png" width="544" height="736"/>
+ </tileset>
+ <tileset firstgid="2968" name="tuiles" tilewidth="32" tileheight="32" tilecount="16" columns="4">
+  <image source="tuiles.png" trans="c2c2d1" width="128" height="128"/>
+ </tileset>
+ <layer id="1" name="Sol1" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBhe4CUX9fGoHaN2jNoxaseoHQNrx1AHACf+KxE=
+  </data>
+ </layer>
+ <layer id="2" name="Mur1" width="25" height="19">
+  <properties>
+   <property name="Solid" type="bool" value="true"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxL42JgSKchzgDiLCDOpiHOQbKDFmDUjlE7Ru0YtWPUjoG1g5b1RzkQV9AQVwIxAGdjSgI=
+  </data>
+ </layer>
+ <layer id="3" name="Table2" width="25" height="19">
+  <properties>
+   <property name="Solid" type="bool" value="true"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztk9sRgjAQRZMfX0WoJWgXYhEKFqFgEb6KEKvwVYQPilCxAi9jPnYWCMH45XhnzrBcQm5mNivEb8sB/RK+qQ7gqGoPjEr4prqCSNUB2SsmPs2g68tkPEnGNCOD+rqMARgCl/kxyViCVYFPz5SoI4Xoync9BhPgs4w6vjdk+kymfg+1o95nYA4W6d+s5GJ/T2WsQQg2X87wsX+gMrZgB/aa9Z/MB+3HCZzBha2xnQ/ajxu4gwfLoPckbw5080H7UcGzCmrsrvD5yJrBPD8R7UcTzxZoswzdfEQFvqls5+Mve70A4pdNzg==
+  </data>
+ </layer>
+ <layer id="5" name="Chaise3" width="25" height="19">
+  <properties>
+   <property name="Solid" type="bool" value="true"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBi+oJiDNHFiQQY7drOIER+1g3jxAkYGhkJG0uwgVbwDaH4nATtOUpheFgDNX0jADiVOyuzYATR/JxFhhQwO4ggfXOIXgOZfJDE+kM0iRvwF0PyXNLaDnHRFqh3EpCtK7SAmXaHroUR8FFAGALQMJfg=
+  </data>
+ </layer>
+ <layer id="6" name="Ordinateur4" width="25" height="19">
+  <properties>
+   <property name="Solid" type="bool" value="true"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgF5IKZ3OSziQVzuclnEwuGiz+oAbiZGBh4mGhrhzLQfBUa22ENNN+GxnYQAsMlXQ0Xf1ADeHEyMHhz0taOP0Dz/9LYjoEAACjMHYQ=
+  </data>
+ </layer>
+</map>
