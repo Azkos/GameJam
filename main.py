@@ -144,13 +144,6 @@ def main():
             # Afficher le nom du personnage en haut à gauche
             nom_personnage_texte = font.render(nom_personnage, True, blanc)
             fenetre.blit(nom_personnage_texte, (10, 10))  # Position du texte
-            # Affichage de la carte actuelle
-            if carte_actuelle:
-                for layer in carte_actuelle.visible_layers:
-                    for x, y, gid in layer:
-                        tile = carte_actuelle.get_tile_image_by_gid(gid)
-                        if tile:
-                            fenetre.blit(tile, (x * carte_actuelle.tilewidth, y * carte_actuelle.tileheight))
 
             # Interaction avec le pingouin sur la carte "SalleMain"
             if carte_actuelle_nom == "SalleMain":

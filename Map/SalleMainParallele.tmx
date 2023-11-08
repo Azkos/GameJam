@@ -42,7 +42,7 @@
   </tile>
  </tileset>
  <tileset firstgid="4302" name="jp le retour" tilewidth="32" tileheight="32" tilecount="4" columns="2">
-  <image source="jp le retour.png" width="64" height="64"/>
+  <image source="pingouin2.png" width="64" height="64"/>
  </tileset>
  <tileset firstgid="4306" name="Interiors_free_32x32_gd" tilewidth="32" tileheight="32" tilecount="1424" columns="89">
   <image source="Interiors_free_32x32_gd.png" width="2848" height="512"/>
