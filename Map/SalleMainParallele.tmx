@@ -80,13 +80,16 @@
   </data>
  </layer>
  <layer id="14" name="Porte2" width="25" height="19">
+  <properties>
+   <property name="destination_tmx" value=""/>
+  </properties>
   <data encoding="base64" compression="zlib">
-   eJxjYCAN8LAyMPCykqiJRCADNF+WxnaMRHBAkPZ2SArR3o4iOtiBDNr4aW/HfTrYMQpGwSgYOAAAstUDag==
+   eJxjYECAy8wIjAvwsDIw8LLilicEHjMjMC4gAzRflgI7RgF2cECQ9nZICtHejiI62IEM2vhpb8d9OtgxCkbBKBg4AADyFgie
   </data>
  </layer>
  <layer id="15" name="Escalier2" width="25" height="19">
   <data encoding="base64" compression="zlib">
-   eJxjYECAy8wITCvwmBmBaQHqgeY2I+EmLPY4sjAwOAGxMxC7sJBuRz+aHZOw2BEINDcIiIOBOIRGdiQCzU2C4hQy7BgFo2AUjIJRQB8AAFbOEU0=
+   eJxjYBheoJ6ZgaEZCTcxY6pxZGFgcAJiZyB2YSHdjn40OyZhsSMQaG4QEAcDcQiN7EgEmpsExSlk2DEKRsEoGAWjgD4AABeNDBk=
   </data>
  </layer>
 </map>

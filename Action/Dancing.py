@@ -38,7 +38,8 @@ class Dancing:
             self.ecranCombat.blit(touche_texte, (200, 50))
             self.ecranCombat.blit(indicateur, (260, 260))
             self.ecranCombat.blit(self.personne.image, (50, 50))
-            self.ecranCombat.blit(self.ennemi.image, (550, 50))
+            self.ennemi.image = pygame.transform.flip(pygame.transform.scale(self.ennemi.image, (250, 250)),True, False)
+            self.ecranCombat.blit(self.ennemi.image, (350, 100))
             self.fenetre.blit(self.ecranCombat, (100, 100))
             pygame.display.flip()
             wait = True
@@ -50,6 +51,7 @@ class Dancing:
                             score += 1
                             indicateur = vert
                             validation.play(1, 1000)
+                            self.personne.image = pygame.transform.flip(self.personne.image, True, False)
                         else:
                             score -= 1
                             indicateur = rouge

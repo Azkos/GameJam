@@ -1,9 +1,17 @@
 import pygame
 import sys
+import pytmx
 
+from Personnage.Informatique import Informatique
 from Personnage.Sprite import Sprite
 from Map.GenererSalles import GenererSalles
 
+
+def afficher_dialogue(fenetre, font, dialogues, dialogue_index, largeur, hauteur, blanc):
+    # Affiche la boîte de dialogue avec le texte actuel
+    pygame.draw.rect(fenetre, (0, 0, 0), (50, hauteur - 150, largeur - 100, 100))
+    texte_dialogue = font.render(dialogues[dialogue_index], True, blanc)
+    fenetre.blit(texte_dialogue, (60, hauteur - 140))
 
 def main():
     if len(sys.argv) > 1:
@@ -38,7 +46,14 @@ def main():
     pygame.mixer.music.play(-1)
 
     # Variable d'état de la scène
-    scene_actuelle = "jeu"
+    scene_actuelle = "titre"
+    dialogue_actif = False
+    dialogues = [
+        "Bonjour, je suis un pingouin !",
+        "C'est un beau jour pour une aventure !",
+        "N'oubliez pas d'apporter votre équipement !"
+    ]
+    dialogue_index = 0
 
     # Création du personnage
     mon_sprite = Sprite()
@@ -54,17 +69,24 @@ def main():
             if evenement.type == pygame.KEYDOWN:
                 if scene_actuelle == "titre":
                     scene_actuelle = "jeu"  # Passer à la scène de jeu lorsque n'importe quelle touche est enfoncée
+            elif evenement.type == pygame.KEYDOWN:
+                if scene_actuelle == "titre" and evenement.key == pygame.K_SPACE:
+                    scene_actuelle = "jeu"
+                elif dialogue_actif and evenement.key == pygame.K_SPACE:
+                    dialogue_index += 1
+                    if dialogue_index >= len(dialogues):
+                        dialogue_actif = False
+                        dialogue_index = 0
+                elif evenement.key == pygame.K_RETURN:
+                    dialogue_actif = not dialogue_actif
+                    dialogue_index = 0
+
 
         if scene_actuelle == "titre":
             # Afficher l'arrière-plan de l'écran de titre
             fenetre.blit(fond, (0, 0))
-
-            # Afficher le texte de l'écran de titre
-            titre_rect = titre_texte.get_rect(center=(largeur // 2, hauteur // 2 - 50))
-            jouer_rect = jouer_texte.get_rect(center=(largeur // 2, hauteur // 2 + 50))
-
-            fenetre.blit(titre_texte, titre_rect)
-            fenetre.blit(jouer_texte, jouer_rect)
+            fenetre.blit(titre_texte, titre_texte.get_rect(center=(largeur // 2, hauteur // 2 - 50)))
+            fenetre.blit(jouer_texte, jouer_texte.get_rect(center=(largeur // 2, hauteur // 2 + 50)))
 
         elif scene_actuelle == "jeu":
 
@@ -80,11 +102,27 @@ def main():
 
             fenetre.blit(mon_sprite.image, mon_sprite.rect)
 
+            carte = pytmx.util_pygame.load_pygame('Map/SalleMain.tmx')
 
             # Afficher le nom du personnage en haut à gauche
             nom_personnage_texte = font.render(nom_personnage, True, blanc)
             fenetre.blit(nom_personnage_texte, (10, 10))  # Position du texte
 
+            pingouin = pygame.Rect(390, 365, 32, 32)
+            if mon_sprite.rect.colliderect(pingouin):
+                dialogue_actif = True
+
+            if dialogue_actif:
+                afficher_dialogue(fenetre, font, dialogues, dialogue_index, largeur, hauteur, blanc)
+
+                # Détecter la collision avec les portes et changer de carte
+                x_personnage, y_personnage = mon_sprite.rect.x // carte.tilewidth, mon_sprite.rect.y // carte.tileheight
+                if (x_personnage, y_personnage) in portes_destinations:
+                    nom_carte, position = portes_destinations[(x_personnage, y_personnage)]
+                    # carte_actuelle = cartes[nom_carte]
+                    mon_sprite.rect.x, mon_sprite.rect.y = position
+
+            # Affichage du personnage
             sprites.draw(fenetre)
         clock.tick(60)
 
