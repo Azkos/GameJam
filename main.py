@@ -4,22 +4,20 @@ import pytmx
 
 from Personnage.Informatique import Informatique
 from Personnage.Sprite import Sprite
-# ... (assurez-vous que tous les imports nécessaires sont présents)
+import Action.Combat as comb
+import Action.Dancing as dan
+from Monstre.Ennemi import Ennemi
+from Monstre.ProfZombie import ProfZombie
 
 def afficher_dialogue(fenetre, font, dialogues, dialogue_index, largeur, hauteur, blanc):
     # Affiche la boîte de dialogue avec le texte actuel
     pygame.draw.rect(fenetre, (0, 0, 0), (50, hauteur - 150, largeur - 100, 100))
     texte_dialogue = font.render(dialogues[dialogue_index], True, blanc)
     fenetre.blit(texte_dialogue, (60, hauteur - 140))
-import Action.Combat as comb
-import Action.Dancing as dan
-from Monstre.Ennemi import Ennemi
-from Monstre.ProfZombie import ProfZombie
 
 def main():
     # Initialisation de Pygame
     pygame.init()
-jj
     # Dimensions de la fenêtre
     largeur, hauteur = 800, 600
     fenetre = pygame.display.set_mode((largeur, hauteur))
@@ -60,17 +58,15 @@ jj
     # Vitesse de déplacement du sprite
     vitesse_deplacement = 5
 
+    parallele = pytmx.util_pygame.load_pygame('Map/SalleMainParallele.tmx')
     # Cartes préchargées
     cartes = {
-        "SalleMainParallele": pytmx.util_pygame.load_pygame('Map/SalleMainParallele.tmx'),
+        "SalleMainParallele": parallele,
         "SalleAmphiBoss": pytmx.util_pygame.load_pygame('Map/SalleAmphiBoss.tmx'),
         "SalleFace": pytmx.util_pygame.load_pygame('Map/SalleFace.tmx'),
         "SalleCours": pytmx.util_pygame.load_pygame('Map/SalleCours.tmx'),
         "SalleInfo": pytmx.util_pygame.load_pygame('Map/SalleInfo.tmx'),
     }
-
-    # Carte actuelle
-    carte_actuelle = None
 
     # Portes et destinations
     portes_destinations = {
@@ -104,11 +100,6 @@ jj
                     dialogue_actif = not dialogue_actif
                     dialogue_index = 0
 
-        touches = pygame.key.get_pressed()
-            if evenement.type == pygame.KEYDOWN:
-                if scene_actuelle == "titre":
-                    scene_actuelle = "jeu"  # Passer à la scène de jeu lorsque n'importe quelle touche est enfoncée
-
 
         if scene_actuelle == "titre":
             # Afficher l'arrière-plan de l'écran de titre
@@ -141,14 +132,12 @@ jj
             if dialogue_actif:
                 afficher_dialogue(fenetre, font, dialogues, dialogue_index, largeur, hauteur, blanc)
 
-            # Détecter la collision avec les portes et changer de carte
-            # Détecter la collision avec les portes et changer de carte
-            x_personnage, y_personnage = mon_sprite.rect.x // carte_actuelle.tilewidth, mon_sprite.rect.y // carte_actuelle.tileheight
-            if (x_personnage, y_personnage) in portes_destinations:
-                nom_carte, position = portes_destinations[(x_personnage, y_personnage)]
-                print(f"Téléportation vers {nom_carte} aux coordonnées {position}")  # Instruction de débogage
-                carte_actuelle = cartes[nom_carte]
-                mon_sprite.rect.x, mon_sprite.rect.y = position
+                # Détecter la collision avec les portes et changer de carte
+                x_personnage, y_personnage = mon_sprite.rect.x // carte.tilewidth, mon_sprite.rect.y // carte.tileheight
+                if (x_personnage, y_personnage) in portes_destinations:
+                    nom_carte, position = portes_destinations[(x_personnage, y_personnage)]
+                    # carte_actuelle = cartes[nom_carte]
+                    mon_sprite.rect.x, mon_sprite.rect.y = position
 
             # Affichage du personnage
             sprites.draw(fenetre)
