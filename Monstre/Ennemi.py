@@ -8,4 +8,3 @@ class Ennemi:
         self.difficulte_base = difficulte
         self.image = pygame.image.load(image_path)
         self.rect = self.image.get_rect()
-
