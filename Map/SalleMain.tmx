@@ -82,7 +82,7 @@
   <object id="8" type="collision" x="736.794" y="-27.5009" width="87.0861" height="449.181"/>
   <object id="9" type="collision" x="442.305" y="-32.0843" width="319.697" height="92.8154"/>
   <object id="10" type="collision" x="87.0861" y="64.1687" width="105.42" height="126.046"/>
-  <object id="11" type="collison" x="58.4393" y="333.448" width="68.7521" height="156.984"/>
+  <object id="11" type="collision" x="58.4393" y="333.448" width="68.7521" height="156.984"/>
   <object id="12" type="collision" x="224.59" y="190.214" width="59.5852" height="113.441"/>
   <object id="13" type="collision" x="236.049" y="175.318" width="35.5219" height="13.7504"/>
   <object id="14" type="collision" x="232.611" y="303.655" width="40.1054" height="14.8963"/>
