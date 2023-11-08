@@ -7,6 +7,130 @@
     "expandedProjectPaths": [
     ],
     "fileStates": {
+        "": {
+            "scaleInEditor": 1
+        },
+        "Map/SalleAmphiBoss.tmx": {
+            "scale": 1.12575,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 399.2893626471241,
+                "y": 303.353320008883
+            }
+        },
+        "Map/SalleAmphiBoss.tmx#MurAmphi": {
+            "scaleInDock": 1
+        },
+        "Map/SalleAmphiBoss.tmx#Scene": {
+            "scaleInDock": 1
+        },
+        "Map/SalleAmphiBoss.tmx#Tableau": {
+            "scaleInDock": 1
+        },
+        "Map/SalleAmphiBoss.tmx#TileSet": {
+            "scaleInDock": 1
+        },
+        "Map/SalleAmphiBoss.tmx#TileSetEcole": {
+            "scaleInDock": 1
+        },
+        "Map/SalleCours.tmx": {
+            "scale": 1.12575,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 398.4010659560293,
+                "y": 302.46502331778817
+            }
+        },
+        "Map/SalleCours.tmx#Interieur": {
+            "scaleInDock": 1
+        },
+        "Map/SalleCours.tmx#Interiors_free_32x32_dg": {
+            "scaleInDock": 1
+        },
+        "Map/SalleCours.tmx#Interiors_free_32x32_gd": {
+            "scaleInDock": 1
+        },
+        "Map/SalleCours.tmx#Room": {
+            "scaleInDock": 1
+        },
+        "Map/SalleCours.tmx#TableauNoir": {
+            "scaleInDock": 1
+        },
+        "Map/SalleFace.tmx": {
+            "scale": 1.12575,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 400.177659338219,
+                "y": 304.2416166999777
+            }
+        },
+        "Map/SalleFace.tmx#Interieur": {
+            "scaleInDock": 1
+        },
+        "Map/SalleFace.tmx#Room": {
+            "scaleInDock": 1
+        },
+        "Map/SalleFace.tmx#School": {
+            "scaleInDock": 1
+        },
+        "Map/SalleFace.tmx#Tableau": {
+            "scaleInDock": 1
+        },
+        "Map/SalleInfo.tmx": {
+            "scale": 1.12575,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 400.177659338219,
+                "y": 304.2416166999777
+            }
+        },
+        "Map/SalleInfo.tmx#Interiors_free_32x32_dg": {
+            "scaleInDock": 1
+        },
+        "Map/SalleInfo.tmx#Room": {
+            "scaleInDock": 1
+        },
+        "Map/SalleInfo.tmx#Schooldg": {
+            "scaleInDock": 1
+        },
+        "Map/SalleInfo.tmx#Schoolgd": {
+            "scaleInDock": 1
+        },
+        "Map/SalleInfo.tmx#tuiles": {
+            "scaleInDock": 1
+        },
+        "Map/SalleMain.tmx": {
+            "scale": 1.2903,
+            "selectedLayer": 5,
+            "viewCenter": {
+                "x": 310.39293187630784,
+                "y": 242.57924513678992
+            }
+        },
+        "Map/SalleMain.tmx#Escalier": {
+            "scaleInDock": 1
+        },
+        "Map/SalleMain.tmx#Interiors_free_32x32_dg": {
+            "scaleInDock": 1
+        },
+        "Map/SalleMain.tmx#Meubles": {
+            "scaleInDock": 0.7037,
+            "scaleInEditor": 1
+        },
+        "Map/SalleMain.tmx#Mur ": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Map/SalleMain.tmx#Poteau": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Map/SalleMain.tmx#Sol": {
+            "scaleInDock": 0.253
+        },
+        "Map/SalleMain.tmx#jp le retour": {
+            "scaleInDock": 1
+        }
     },
     "openFiles": [
     ],
