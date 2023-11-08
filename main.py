@@ -9,6 +9,7 @@ import Action.Dancing as dan
 from Monstre.Ennemi import Ennemi
 from Monstre.ProfZombie import ProfZombie
 
+
 def afficher_dialogue(fenetre, font, dialogues, dialogue_index, largeur, hauteur, blanc):
     # Affiche la boîte de dialogue avec le texte actuel
     pygame.draw.rect(fenetre, (0, 0, 0), (50, hauteur - 150, largeur - 100, 100))
@@ -18,6 +19,7 @@ def afficher_dialogue(fenetre, font, dialogues, dialogue_index, largeur, hauteur
 def main():
     # Initialisation de Pygame
     pygame.init()
+
     # Dimensions de la fenêtre
     largeur, hauteur = 800, 600
     fenetre = pygame.display.set_mode((largeur, hauteur))
@@ -29,7 +31,7 @@ def main():
     # Police de caractères
     font = pygame.font.Font(None, 36)
 
-    # Chargez l'image d'arrière-plan pour le menu
+    # Chargement de l'image d'arrière-plan pour le menu
     fond = pygame.image.load("image/v_iut2-rentree-2023_1696500078894-jpg (2)_120x80.png")
     fond = pygame.transform.scale(fond, (largeur, hauteur))
 
@@ -43,47 +45,66 @@ def main():
 
     # Variable d'état de la scène
     scene_actuelle = "titre"
-    dialogue_actif = False
+
+    # Dialogues à afficher
     dialogues = [
         "Bonjour, je suis un pingouin !",
         "C'est un beau jour pour une aventure !",
         "N'oubliez pas d'apporter votre équipement !"
     ]
     dialogue_index = 0
+    dialogue_actif = False
 
     # Création du personnage
     mon_sprite = Sprite()
     sprites = pygame.sprite.Group(mon_sprite)
 
-    # Vitesse de déplacement du sprite
-    vitesse_deplacement = 5
-
-    parallele = pytmx.util_pygame.load_pygame('Map/SalleMainParallele.tmx')
     # Cartes préchargées
     cartes = {
-        "SalleMainParallele": parallele,
+        "SalleMain": pytmx.util_pygame.load_pygame('Map/SalleMain.tmx'),
+        "SalleMainParallele": pytmx.util_pygame.load_pygame('Map/SalleMainParallele.tmx'),
         "SalleAmphiBoss": pytmx.util_pygame.load_pygame('Map/SalleAmphiBoss.tmx'),
         "SalleFace": pytmx.util_pygame.load_pygame('Map/SalleFace.tmx'),
         "SalleCours": pytmx.util_pygame.load_pygame('Map/SalleCours.tmx'),
         "SalleInfo": pytmx.util_pygame.load_pygame('Map/SalleInfo.tmx'),
     }
 
-    # Portes et destinations
+    # Portes et destinations pour toutes les cartes
     portes_destinations = {
-        (1, 0): ('SalleAmphiBoss', (570, 32)),  # Coordonnées de la nouvelle position à ajuster
-        (2, 0): ('SalleAmphiBoss', (570, 32)),
-        (3, 0): ('SalleAmphiBoss', (570, 32)),
-        (11, 0): ('SalleFace', (330, 500)),
-        (12, 0): ('SalleFace', (330, 500)),
-        (0, 6): ('SalleCours', (640, 236)),
-        (0, 7): ('SalleCours', (640, 236)),
-        (20, 2): ('SalleInfo', (32, 224)),
-        (21, 3): ('SalleInfo', (32, 224))
+        "SalleMainParallele": {
+            (3, 1): ('SalleAmphiBoss', (570, 32)),
+            (4, 1): ('SalleAmphiBoss', (570, 32)),
+            (5, 1): ('SalleAmphiBoss', (570, 32)),
+            (12, 1): ('SalleFace', (330, 500)),
+            (13, 1): ('SalleFace', (330, 500)),
+            (0, 7): ('SalleCours', (640, 236)),
+            (0, 8): ('SalleCours', (640, 236)),
+            (23, 4): ('SalleInfo', (32, 224)),
+            (23, 5): ('SalleInfo', (32, 224)),
+        },
+        "SalleAmphiBoss": {
+            (23, 4): ("SalleMainParallele", (100, 100)),
+            (23, 5): ("SalleMainParallele", (100, 100)),
+        },
+        "SalleFace": {
+            (8, 5): ("SalleMainParallele", (200, 200)),
+        },
+        "SalleCours": {
+            (23, 7): ("SalleMainParallele", (300, 300)),
+            (23, 8): ("SalleMainParallele", (300, 300)),
+        },
+        "SalleInfo": {
+            (15, 7): ("SalleMainParallele", (400, 400)),
+        },
     }
+
+    # Carte actuelle
+    carte_actuelle_nom = "SalleMain"
+    carte_actuelle = cartes[carte_actuelle_nom]
 
     # Boucle principale
     en_jeu = True
-    clock = pygame.time.Clock()  # Créez une horloge pour contrôler la fréquence de rafraîchissement
+    clock = pygame.time.Clock()
     while en_jeu:
         for evenement in pygame.event.get():
             if evenement.type == pygame.QUIT:
@@ -91,63 +112,72 @@ def main():
             elif evenement.type == pygame.KEYDOWN:
                 if scene_actuelle == "titre" and evenement.key == pygame.K_SPACE:
                     scene_actuelle = "jeu"
+                    carte_actuelle_nom = "SalleMain"
+                    carte_actuelle = cartes[carte_actuelle_nom]
                 elif dialogue_actif and evenement.key == pygame.K_SPACE:
                     dialogue_index += 1
                     if dialogue_index >= len(dialogues):
                         dialogue_actif = False
                         dialogue_index = 0
-                elif evenement.key == pygame.K_RETURN:
-                    dialogue_actif = not dialogue_actif
-                    dialogue_index = 0
-
+                        carte_actuelle_nom = "SalleMainParallele"
+                        carte_actuelle = cartes[carte_actuelle_nom]
 
         if scene_actuelle == "titre":
-            # Afficher l'arrière-plan de l'écran de titre
             fenetre.blit(fond, (0, 0))
             fenetre.blit(titre_texte, titre_texte.get_rect(center=(largeur // 2, hauteur // 2 - 50)))
             fenetre.blit(jouer_texte, jouer_texte.get_rect(center=(largeur // 2, hauteur // 2 + 50)))
 
         elif scene_actuelle == "jeu":
             pygame.mixer.music.stop()
-
             mon_sprite.deplacement(5)
-
             mon_sprite.update()
 
-            fenetre.blit(mon_sprite.image, mon_sprite.rect)
+            # Affichage de la carte actuelle
+            if carte_actuelle:
+                for layer in carte_actuelle.visible_layers:
+                    for x, y, gid in layer:
+                        tile = carte_actuelle.get_tile_image_by_gid(gid)
+                        if tile:
+                            fenetre.blit(tile, (x * carte_actuelle.tilewidth, y * carte_actuelle.tileheight))
 
-            carte = pytmx.util_pygame.load_pygame('Map/SalleMain.tmx')
+            # Interaction avec le pingouin sur la carte "SalleMain"
+            if carte_actuelle_nom == "SalleMain":
+                pingouin_rect = pygame.Rect(350, 320, 32, 32)  # Rectangle fictif pour le pingouin
+                if mon_sprite.rect.colliderect(pingouin_rect):
+                    dialogue_actif = True
 
-            # Afficher la carte Tiled
-            for layer in carte.visible_layers:
-                for x, y, gid in layer:
-                    tile = carte.get_tile_image_by_gid(gid)
-                    if tile:
-                        fenetre.blit(tile, (x * carte.tilewidth, y * carte.tileheight))
-
-            pingouin = pygame.Rect(390, 365, 32, 32)
-            if mon_sprite.rect.colliderect(pingouin):
-                dialogue_actif = True
-
+            # Affichage du dialogue si actif
             if dialogue_actif:
                 afficher_dialogue(fenetre, font, dialogues, dialogue_index, largeur, hauteur, blanc)
 
-                # Détecter la collision avec les portes et changer de carte
-                x_personnage, y_personnage = mon_sprite.rect.x // carte.tilewidth, mon_sprite.rect.y // carte.tileheight
-                if (x_personnage, y_personnage) in portes_destinations:
-                    nom_carte, position = portes_destinations[(x_personnage, y_personnage)]
-                    # carte_actuelle = cartes[nom_carte]
+            # Détecter la collision avec les portes et changer de carte
+            if not dialogue_actif and carte_actuelle_nom in portes_destinations:
+                x_personnage, y_personnage = mon_sprite.rect.x // carte_actuelle.tilewidth, mon_sprite.rect.y // carte_actuelle.tileheight
+                if (x_personnage, y_personnage) in portes_destinations[carte_actuelle_nom]:
+                    nom_carte, position = portes_destinations[carte_actuelle_nom][(x_personnage, y_personnage)]
+                    carte_actuelle_nom = nom_carte
+                    carte_actuelle = cartes[nom_carte]
                     mon_sprite.rect.x, mon_sprite.rect.y = position
 
             # Affichage du personnage
             sprites.draw(fenetre)
-        clock.tick(60)
 
+            # Empêcher le personnage de sortir de la carte
+            if mon_sprite.rect.left < 0:
+                mon_sprite.rect.left = 0
+            if mon_sprite.rect.right > largeur:
+                mon_sprite.rect.right = largeur
+            if mon_sprite.rect.top < 0:
+                mon_sprite.rect.top = 0
+            if mon_sprite.rect.bottom > hauteur:
+                mon_sprite.rect.bottom = hauteur
+
+        clock.tick(60)
         pygame.display.flip()
 
-    # Quitter Pygame
     pygame.quit()
     sys.exit()
 
+if __name__ == "__main__":
+    main()
 
-main()
