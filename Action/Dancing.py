@@ -37,7 +37,8 @@ class Dancing:
             touche_texte = font.render("Appuyer sur la touche '" + chr(touche) + "'", True, (255, 255, 255))
             self.ecranCombat.blit(touche_texte, (200, 50))
             self.ecranCombat.blit(indicateur, (260, 260))
-            self.ecranCombat.blit(self.personne.image, (0, 0))
+            self.ecranCombat.blit(self.personne.image, (50, 50))
+            self.ecranCombat.blit(self.ennemi.image, (550, 50))
             self.fenetre.blit(self.ecranCombat, (100, 100))
             pygame.display.flip()
             wait = True
@@ -54,6 +55,8 @@ class Dancing:
                             indicateur = rouge
                             erreur.play(1, 500)
                         wait = False
+                    elif event.type == pygame.QUIT:
+                        pygame.quit()
         temps = boucle.tick(60)
         score = score + (Dancing.DIFF[self.difficulte] - temps // 1000)
         print(score)
