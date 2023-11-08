@@ -12,7 +12,6 @@ from Monstre.ProfZombie import ProfZombie
 def main():
     # Initialisation de Pygame
     pygame.init()
-jj
     # Dimensions de la fenêtre
     largeur, hauteur = 800, 600
     fenetre = pygame.display.set_mode((largeur, hauteur))
