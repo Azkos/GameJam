@@ -5,7 +5,7 @@ import pytmx
 pygame.init()
 
 # Dimensions de la fenêtre
-largeur, hauteur = 800, 600
+largeur, hauteur = 800, 608
 
 # Création de la fenêtre
 fenetre = pygame.display.set_mode((largeur, hauteur))

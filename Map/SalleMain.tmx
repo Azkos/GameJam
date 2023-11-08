@@ -42,7 +42,7 @@
   </tile>
  </tileset>
  <tileset firstgid="4302" name="jp le retour" tilewidth="32" tileheight="32" tilecount="4" columns="2">
-  <image source="jp le retour.png" width="64" height="64"/>
+  <image source="pingouin2.png" width="64" height="64"/>
  </tileset>
  <layer id="1" name="Sol1" width="25" height="19">
   <data encoding="base64" compression="zlib">
