@@ -4,6 +4,7 @@ import pygame
 import Monstre.Ennemi
 import Personnage.Personne
 
+#Classe en stand-by, plus utilisée pour l'instant
 
 class Combat:
     # Défini un combat par une difficulté reliée à un tempo et les
@@ -23,7 +24,7 @@ class Combat:
     def combat(self):
         # met en place un tour de combat. Si il y a eu 2 esquives de suite, lance une attaque
         if self.est_fini():
-            if self.ennemi.vie_base == 0:
+            if self.ennemi.vie_base <= 0:
                 print("tu as gagné le combat!")
             else:
                 print("tu as perdu!")
@@ -40,6 +41,7 @@ class Combat:
 
     def clique(self, touche):
         # gere le temps du clique et retourne un score basé sur le temps mis à appuyer sur la touche.
+        self.ecranCombat.fill("blue")
         temps_boucle = (60000 // Combat.DIFF[self.difficulte])
         temps_phase = temps_boucle // 4
         boucle = pygame.time.Clock()
@@ -53,6 +55,7 @@ class Combat:
             touche_texte = font.render("Appuyer sur la touche 'A'", True, (255, 255, 255))
         self.ecranCombat.blit(touche_texte, (200, 50))
         indicateur = [rouge, orange, vert]
+        boucle.tick(60)
         self.ecranCombat.blit(indicateur[0], (50, 50))
         self.fenetre.blit(self.ecranCombat, (100, 50))
         pygame.display.flip()
@@ -64,18 +67,19 @@ class Combat:
         self.ecranCombat.blit(indicateur[2], (50, 50))
         self.fenetre.blit(self.ecranCombat, (100, 50))
         pygame.display.flip()
-        boucle.tick(60)
-        pygame.time.delay(temps_phase)
         res = 0
         for event in pygame.event.get():
-            if evenement.type == pygame.QUIT:
-                en_jeu = False
-            if touche:
+            if event.type == pygame.KEYDOWN:
+                touches = pygame.key.get_pressed()
                 temps_clic = boucle.tick(60)
-                if temps_clic < temps_phase // 2:
-                    res = 2
-                elif temps_clic < temps_phase:
-                    res = 1
+                if touches[touche]:
+                    if temps_clic < temps_phase // 2:
+                        res = 2
+                    elif temps_clic < temps_phase:
+                        res = 1
+        pygame.time.delay(temps_phase)
+        pygame.display.update()
+        print(res)
         return res
 
 
