@@ -5,13 +5,13 @@ import pytmx
 from Personnage.Informatique import Informatique
 from Personnage.Sprite import Sprite
 import Action.Combat as comb
+import Action.Dancing as dan
 from Monstre.Ennemi import Ennemi
 from Monstre.ProfZombie import ProfZombie
 
 def main():
     # Initialisation de Pygame
     pygame.init()
-jj
     # Dimensions de la fenêtre
     largeur, hauteur = 800, 600
     fenetre = pygame.display.set_mode((largeur, hauteur))
@@ -51,6 +51,10 @@ jj
                 en_jeu = False
             if evenement.type == pygame.KEYDOWN:
                 if scene_actuelle == "titre":
+                    perso = Informatique()
+                    ennemi = ProfZombie()
+                    dance = dan.Dancing(perso, ennemi, fenetre)
+                    dance.dance()
                     scene_actuelle = "jeu"  # Passer à la scène de jeu lorsque n'importe quelle touche est enfoncée
 
 
