@@ -8,11 +8,10 @@ import Action.Combat as comb
 from Monstre.Ennemi import Ennemi
 from Monstre.ProfZombie import ProfZombie
 
-
 def main():
     # Initialisation de Pygame
     pygame.init()
-
+jj
     # Dimensions de la fenêtre
     largeur, hauteur = 800, 600
     fenetre = pygame.display.set_mode((largeur, hauteur))
@@ -69,10 +68,10 @@ def main():
         elif scene_actuelle == "jeu":
             pygame.mixer.music.stop()
 
-
             mon_sprite.deplacement(5)
 
             mon_sprite.update()
+
             fenetre.blit(mon_sprite.image, mon_sprite.rect)
 
             carte = pytmx.util_pygame.load_pygame('Map/SalleMain.tmx')
