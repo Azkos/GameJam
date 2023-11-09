@@ -46,7 +46,7 @@
  </tileset>
  <layer id="1" name="Sol1" width="25" height="19">
   <data encoding="base64" compression="zlib">
-   eJxjY2ZgYCcBwwCx6jmAmAuIuUnAMECseh4kO5YxQHAGHvwSDeNTm8EweO0gFaPbQU2zR+0YHnZYj9oxqOJj1A7S6w9SMcgOcSCWoCGWBGIAUIOOXw==
+   eJxjY2ZgYKch5gBiLiDmJgHDALHqeZDsWMYAwRl48Es0jE9tBsPgtYNUjG4HNc0etWN42GE9asegio9RO0ivP0jFIDvEgViChlgSiAHhBY5z
   </data>
  </layer>
  <layer id="4" name="Meubles2" width="25" height="19">
@@ -56,7 +56,7 @@
  </layer>
  <layer id="5" name="Escaliers3" width="25" height="19">
   <data encoding="base64" compression="zlib">
-   eJxjYCAN8DFD8GAF9UC3NSPhJhq4tR/NjkmjdoyCUTAKRsEowAMAcAUK5w==
+   eJxjYBheoJ6ZgaEZCTcxU9+OfjQ7Jo3aMQpGwSgYBaMADwAAekgKxQ==
   </data>
  </layer>
  <layer id="10" name="Porte2" width="25" height="19">
