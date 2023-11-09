@@ -19,6 +19,7 @@ class Dancing:
         pygame.display.flip()
 
     def dance(self):
+        #créé la dance et retourne True si la danse a été gagné et False sinon
         boucle = pygame.time.Clock()
         key_seq = []
         score = 0
@@ -61,11 +62,12 @@ class Dancing:
         temps = boucle.tick(60)
         score = score + (Dancing.DIFF[self.difficulte] - temps // 1000)
         print(score)
-        self.resultat(score)
+        return self.resultat(score)
 
     def resultat(self, score):
+        #retourne True si le score est supérieur à la difficulté et False sinon
         print("score : " + str(score))
         if score < Dancing.KEY_POOL[self.difficulte]:
-            return "Perdu !"
+            return False
         else:
-            return "Gagné !"
+            return True

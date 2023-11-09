@@ -1,0 +1,2 @@
+class Pinguin:
+    pass
