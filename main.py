@@ -7,10 +7,10 @@ from Personnage.Sprite import Sprite
 from Map.GenererSalles import GenererSalles
 
 
-def afficher_dialogue(fenetre, font, dialogues, dialogue_index, largeur, hauteur, blanc):
+def afficher_dialogue(fenetre, font, dialogues, dialogue_index, largeur, hauteur, couleur):
     # Affiche la boîte de dialogue avec le texte actuel
     pygame.draw.rect(fenetre, (0, 0, 0), (50, hauteur - 150, largeur - 100, 100))
-    texte_dialogue = font.render(dialogues[dialogue_index], True, blanc)
+    texte_dialogue = font.render(dialogues[dialogue_index], True, couleur)
     fenetre.blit(texte_dialogue, (60, hauteur - 140))
 
 def main():
@@ -27,7 +27,8 @@ def main():
     pygame.display.set_caption("Nom du jeu")
 
     # Couleurs
-    blanc = (255, 255, 255)
+    couleur_titre = (0, 0, 0)
+    couleur_dialogue = (255, 255, 255)
 
     # Police de caractères
     font = pygame.font.Font(None, 36)
@@ -37,8 +38,9 @@ def main():
     fond = pygame.transform.scale(fond, (largeur, hauteur))
 
     # Texte de l'écran de titre
-    titre_texte = font.render("Mon Jeu", True, blanc)
-    jouer_texte = font.render("Appuyez sur une touche pour commencer le jeu", True, blanc)
+    titre_texte = font.render("Mon Jeu", True, couleur_titre)
+    jouer_texte = font.render("Appuyez sur une touche pour commencer le jeu", True, couleur_titre)
+    credit_texte = font.render("Appuez sur 'c' pour ouvrir les crédits", True, couleur_titre)
 
     # Musique de l'écran de titre
     pygame.mixer.music.load('Musique/menu.mp3')
@@ -109,10 +111,16 @@ def main():
             if evenement.type == pygame.QUIT:
                 en_jeu = False
             elif evenement.type == pygame.KEYDOWN:
-                if scene_actuelle == "titre" and evenement.key == pygame.K_SPACE:
-                    scene_actuelle = "jeu"
-                    carte_actuelle_nom = "SalleMain"
-                    carte_actuelle = cartes[carte_actuelle_nom]
+                if scene_actuelle == "titre":
+                    if evenement.key == pygame.K_c:
+                        scene_actuelle = "credit"
+                    else:
+                        scene_actuelle = "jeu"
+                        carte_actuelle_nom = "SalleMain"
+                        carte_actuelle = cartes[carte_actuelle_nom]
+                elif scene_actuelle == "credit":
+                    if evenement.key == pygame.K_ESCAPE:
+                        scene_actuelle = "titre"
                 elif dialogue_actif and evenement.key == pygame.K_SPACE:
                     dialogue_index += 1
                     if dialogue_index >= len(dialogues):
@@ -126,6 +134,22 @@ def main():
             fenetre.blit(fond, (0, 0))
             fenetre.blit(titre_texte, titre_texte.get_rect(center=(largeur // 2, hauteur // 2 - 50)))
             fenetre.blit(jouer_texte, jouer_texte.get_rect(center=(largeur // 2, hauteur // 2 + 50)))
+            fenetre.blit(credit_texte, credit_texte.get_rect(center=(largeur //2, hauteur // 2 + 100)))
+
+        elif scene_actuelle == "credit":
+            fenetre.fill("black")
+            cred_textes = ["Alexis Rebelo : Leader",
+                           "Yvain Dalban : Chargé du core-game",
+                           "Kevin Zheng : Level Designer",
+                           "Théo Besset : Scénariste",
+                           "Musiques et Bruitages : https://lasonotheque.org",
+                           "Images et Sprites : "]
+            pos_x = 50
+            pos_y = 50
+            for texte in cred_textes:
+                fenetre.blit(font.render(texte, True, "white"), (pos_x, pos_y))
+                pos_y += 50
+            fenetre.blit(font.render("Echap pour sortir", True, "white"), (20, hauteur-50))
 
         elif scene_actuelle == "jeu":
 
@@ -142,7 +166,7 @@ def main():
             fenetre.blit(mon_sprite.image, mon_sprite.rect)
 
             # Afficher le nom du personnage en haut à gauche
-            nom_personnage_texte = font.render(nom_personnage, True, blanc)
+            nom_personnage_texte = font.render(nom_personnage, True, couleur_titre)
             fenetre.blit(nom_personnage_texte, (10, 10))  # Position du texte
 
             # Interaction avec le pingouin sur la carte "SalleMain"
@@ -153,7 +177,7 @@ def main():
 
             # Affichage du dialogue si actif
             if dialogue_actif:
-                afficher_dialogue(fenetre, font, dialogues, dialogue_index, largeur, hauteur, blanc)
+                afficher_dialogue(fenetre, font, dialogues, dialogue_index, largeur, hauteur, couleur_dialogue)
 
             # Détecter la collision avec les portes et changer de carte
             if not dialogue_actif and carte_actuelle_nom in portes_destinations:
