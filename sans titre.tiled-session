@@ -13,11 +13,14 @@
             "scaleInEditor": 1
         },
         "Map/SalleAmphiBoss.tmx": {
+            "expandedObjectLayers": [
+                11
+            ],
             "scale": 1.12575,
-            "selectedLayer": 0,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 399.2893626471241,
-                "y": 303.353320008883
+                "x": 398.4010659560293,
+                "y": 302.46502331778817
             }
         },
         "Map/SalleAmphiBoss.tmx#MurAmphi": {
@@ -39,8 +42,8 @@
             "scale": 1.12575,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 398.4010659560293,
-                "y": 302.46502331778817
+                "x": 391.2946924272707,
+                "y": 296.2469464801244
             }
         },
         "Map/SalleCours.tmx#Interieur": {
@@ -66,8 +69,8 @@
             "scale": 0.8149,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 338.0782918149466,
-                "y": 406.79838016934593
+                "x": 387.1640692109462,
+                "y": 291.4468032887471
             }
         },
         "Map/SalleFace.tmx#Interieur": {
@@ -84,6 +87,7 @@
         },
         "Map/SalleInfo.tmx": {
             "expandedObjectLayers": [
+                8,
                 7
             ],
             "scale": 1.12575,
@@ -109,11 +113,11 @@
             "scaleInDock": 1
         },
         "Map/SalleMain.tmx": {
-            "scale": 0.8727,
-            "selectedLayer": 6,
+            "scale": 0.722,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 400.48126503953245,
-                "y": 304.2282571330354
+                "x": 331.7174515235457,
+                "y": 184.90304709141276
             }
         },
         "Map/SalleMain.tmx#Escalier": {
@@ -139,6 +143,47 @@
         },
         "Map/SalleMain.tmx#jp le retour": {
             "scaleInDock": 1
+        },
+        "Map/SalleMainParallele.tmx": {
+            "scale": 1.12575,
+            "selectedLayer": 6,
+            "viewCenter": {
+                "x": 400.177659338219,
+                "y": 281.5900510770597
+            }
+        },
+        "Map/SalleMainParallele.tmx#Crazy": {
+            "scaleInDock": 1
+        },
+        "Map/SalleMainParallele.tmx#Crazydg": {
+            "scaleInDock": 1
+        },
+        "Map/SalleMainParallele.tmx#Crazygd": {
+            "scaleInDock": 1
+        },
+        "Map/SalleMainParallele.tmx#Escalier": {
+            "scaleInDock": 1
+        },
+        "Map/SalleMainParallele.tmx#Interiors_free_32x32_dg": {
+            "scaleInDock": 1
+        },
+        "Map/SalleMainParallele.tmx#Interiors_free_32x32_gd": {
+            "scaleInDock": 1
+        },
+        "Map/SalleMainParallele.tmx#Meubles": {
+            "scaleInDock": 1
+        },
+        "Map/SalleMainParallele.tmx#Mur ": {
+            "scaleInDock": 1
+        },
+        "Map/SalleMainParallele.tmx#Poteau": {
+            "scaleInDock": 1
+        },
+        "Map/SalleMainParallele.tmx#Sol": {
+            "scaleInDock": 1
+        },
+        "Map/SalleMainParallele.tmx#jp le retour": {
+            "scaleInDock": 1
         }
     },
     "openFiles": [
@@ -146,8 +191,9 @@
     ],
     "project": "sans titre.tiled-project",
     "recentFiles": [
+        "Map/SalleFace.tmx",
+        "Map/SalleCours.tmx",
         "Map/SalleMain.tmx",
-        "Map/SalleAmphiBoss.tmx",
-        "Map/SalleCours.tmx"
+        "Map/SalleAmphiBoss.tmx"
     ]
 }

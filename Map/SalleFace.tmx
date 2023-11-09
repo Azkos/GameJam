@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="left-up" width="25" height="19" tilewidth="32" tileheight="32" infinite="0" nextlayerid="6" nextobjectid="38">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="left-up" width="25" height="19" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="38">
  <tileset firstgid="1" name="Room" tilewidth="32" tileheight="32" tilecount="391" columns="17">
   <image source="Room.png" width="544" height="736"/>
  </tileset>
@@ -37,6 +37,11 @@
   <object id="31" type="Teleporte" x="352.654" y="545.414" width="63.9574" height="25.7606"/>
   <object id="32" x="99.4892" y="-47.968"/>
  </objectgroup>
+ <layer id="6" name="player" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGAS0BAAdsAAE=
+  </data>
+ </layer>
  <objectgroup id="4" name="Calque d'Objets 1">
   <object id="1" type="collision" x="-0.631804" y="65.8446" width="62.8126" height="480.311"/>
   <object id="2" type="collision" x="1.77659" y="0.888297" width="797.937" height="61.2925"/>
