@@ -188,8 +188,6 @@ def main():
             teleport = mon_sprite.checkTeleporte(carte, "Teleporte")
             if teleport:
                 carte_actuelle_nom = teleport
-                genererSalle = GenererSalles(teleport, fenetre, largeur, hauteur)
-                carte=genererSalle.genererSalle()
             # Affichage du personnage
             sprites.draw(fenetre)
         print(clock)
