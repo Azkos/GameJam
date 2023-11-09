@@ -61,13 +61,12 @@ class Dancing:
                         pygame.quit()
         temps = boucle.tick(60)
         score = score + (Dancing.DIFF[self.difficulte] - temps // 1000)
-        print(score)
         return self.resultat(score)
 
     def resultat(self, score):
         #retourne True si le score est supérieur à la difficulté et False sinon
         print("score : " + str(score))
-        if score < Dancing.KEY_POOL[self.difficulte]:
+        if score < Dancing.DIFF[self.difficulte]:
             return False
         else:
             return True

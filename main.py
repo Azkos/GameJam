@@ -13,24 +13,25 @@ def afficher_dialogue(fenetre, font, dialogues, dialogue_index, largeur, hauteur
     texte_dialogue = font.render(dialogues[dialogue_index], True, couleur)
     fenetre.blit(texte_dialogue, (60, hauteur - 140))
 
-def lancer_dance(fenetre, carte_nom, sprite):
+def lancer_dance(fenetre, carte_nom, sprite, dance):
     res = True
-    if carte_nom == "Map/SalleAmphiBoss.tmx":
-        ennemi = En.Ennemi(3, "sprite/pinguin2.png")
-        dance = Dan.Dancing(sprite, ennemi, fenetre)
-        res = dance.dance()
-    elif carte_nom == "Map/SalleFace.tmx":
-        ennemi = En.Ennemi(2, "sprite/Prof-Zombie.png")
-        dance = Dan.Dancing(sprite, ennemi, fenetre)
-        res = dance.dance()
-    elif carte_nom == "Map/SalleCours.tmx":
-        ennemi = En.Ennemi(1, "sprite/")
-        dance = Dan.Dancing(sprite, ennemi, fenetre)
-        res = dance.dance()
-    elif carte_nom == "Map/SalleInfo.tmx":
-        ennemi = En.Ennemi(1, "sprite/")
-        dance = Dan.Dancing(sprite, ennemi, fenetre)
-        res = dance.dance()
+    if not dance[carte_nom]:
+        if carte_nom == "Map/SalleAmphiBoss.tmx":
+                ennemi = En.Ennemi(3, "sprite/pinguin2.png")
+                dance = Dan.Dancing(sprite, ennemi, fenetre)
+                res = dance.dance()
+        elif carte_nom == "Map/SalleFace.tmx":
+                ennemi = En.Ennemi(2, "sprite/perso4.png")
+                dance = Dan.Dancing(sprite, ennemi, fenetre)
+                res = dance.dance()
+        elif carte_nom == "Map/SalleCours.tmx":
+                ennemi = En.Ennemi(1, "sprite/perso3.png")
+                dance = Dan.Dancing(sprite, ennemi, fenetre)
+                res = dance.dance()
+        elif carte_nom == "Map/SalleInfo.tmx":
+                ennemi = En.Ennemi(1, "sprite/perso2.png")
+                dance = Dan.Dancing(sprite, ennemi, fenetre)
+                res = dance.dance()
     return res
 
 
@@ -50,7 +51,12 @@ def main():
 
     #progression dans le jeu
     dance_reussi = 0
-    dance = {'pingouin': False, 'ecran': False, 'livre': False, 'prof': False}
+    dance = {
+        'Map/SalleAmphiBoss.tmx': False,
+        'Map/SalleFace.tmx': False,
+        'Map/SalleCours.tmx': False,
+        'Map/SalleInfo.tmx': False,
+    }
 
     # Couleurs
     couleur_titre = (0, 0, 0)
@@ -79,8 +85,9 @@ def main():
         "Bonjour, je suis ici pour vous préparer à vos épreuves",
         "Vous devez rester en forme pour être au maximum ",
         "Vous allez passer 3 épreuves de bases puis une final",
-        "Ces épreuves constitueront de danser au bon rythme ",
-        "Puis vous serez dans le rythme mieux ce sera",
+        "Ces épreuves consisteront en danser sans se tromper",
+        "Appuyez sur les touches demandées",
+        "Le plus rapidement pour réussir",
         "Je vais vous téléporter dans une dimension rythmé",
         "Vous êtes prêt ? C'est parti !!!!!!"
 
@@ -100,35 +107,6 @@ def main():
         'Map/SalleFace.tmx': (330, 500),
         'Map/SalleCours.tmx': (670, 300),
         'Map/SalleInfo.tmx': (90, 224),
-    }
-
-    # Portes et destinations pour toutes les cartes
-    portes_destinations = {
-        "SalleMainParallele": {
-            (3, 1): ('SalleAmphiBoss', (570, 32)),
-            (4, 1): ('SalleAmphiBoss', (570, 32)),
-            (5, 1): ('SalleAmphiBoss', (570, 32)),
-            (12, 1): ('SalleFace', (330, 500)),
-            (13, 1): ('SalleFace', (330, 500)),
-            (0, 7): ('SalleCours', (640, 236)),
-            (0, 8): ('SalleCours', (640, 236)),
-            (23, 4): ('SalleInfo', (32, 224)),
-            (23, 5): ('SalleInfo', (32, 224)),
-        },
-        "SalleAmphiBoss": {
-            (23, 4): ("SalleMainParallele", (100, 100)),
-            (23, 5): ("SalleMainParallele", (100, 100)),
-        },
-        "SalleFace": {
-            (8, 5): ("SalleMainParallele", (200, 200)),
-        },
-        "SalleCours": {
-            (23, 7): ("SalleMainParallele", (300, 300)),
-            (23, 8): ("SalleMainParallele", (300, 300)),
-        },
-        "SalleInfo": {
-            (15, 7): ("SalleMainParallele", (400, 400)),
-        },
     }
 
     # Carte actuelle
@@ -234,17 +212,22 @@ def main():
                 mon_sprite.rect.y = spawn[carte_actuelle_nom][1]
 
             if mon_sprite.checkCollision(carte, "dance"):
-                if lancer_dance(fenetre, carte_actuelle_nom, mon_sprite):
-                    dance_reussi += 1
-                    if dance_reussi < 4:
-                        #dialogue félicitation et continuer
-                        felicitation = ["Bravo pour cette dance", "Continue d'explorer les autres salles pour finir ton entrainement"]
-                        for i in range(len(felicitation)):
-                            afficher_dialogue(fenetre, font, felicitation, i, largeur, hauteur, couleur_dialogue)
-                    else:
-                        #affichage victoire
+                if lancer_dance(fenetre, carte_actuelle_nom, mon_sprite, dance):
+                    dance[carte_actuelle_nom] = True
+                    fini = True
+                    for e in dance:
+                        if not dance[e]:
+                            fini = False
+                    if fini:
+                        # affichage victoire
                         scene_actuelle = "victoire"
                         dance_reussi = 0
+                    else:
+                        #dialogue félicitation et continuer
+                        felicitation = ["Explore les autres salles pour finir ton entrainement"]
+                        for i in range(len(felicitation)):
+                            afficher_dialogue(fenetre, font, felicitation, i, largeur, hauteur, couleur_dialogue)
+
 
                 else:
                     #affichage écran de défaite
