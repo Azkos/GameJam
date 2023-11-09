@@ -3,8 +3,10 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "",
+    "activeFile": "Map/SalleMain.tmx",
     "expandedProjectPaths": [
+        ".",
+        "Map"
     ],
     "fileStates": {
         "": {
@@ -57,11 +59,15 @@
             "scaleInDock": 1
         },
         "Map/SalleFace.tmx": {
-            "scale": 1.12575,
-            "selectedLayer": 0,
+            "expandedObjectLayers": [
+                4,
+                5
+            ],
+            "scale": 0.8149,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 400.177659338219,
-                "y": 304.2416166999777
+                "x": 338.0782918149466,
+                "y": 406.79838016934593
             }
         },
         "Map/SalleFace.tmx#Interieur": {
@@ -77,8 +83,11 @@
             "scaleInDock": 1
         },
         "Map/SalleInfo.tmx": {
+            "expandedObjectLayers": [
+                7
+            ],
             "scale": 1.12575,
-            "selectedLayer": 1,
+            "selectedLayer": 6,
             "viewCenter": {
                 "x": 400.177659338219,
                 "y": 304.2416166999777
@@ -100,11 +109,11 @@
             "scaleInDock": 1
         },
         "Map/SalleMain.tmx": {
-            "scale": 1.2903,
-            "selectedLayer": 5,
+            "scale": 0.8727,
+            "selectedLayer": 6,
             "viewCenter": {
-                "x": 310.39293187630784,
-                "y": 242.57924513678992
+                "x": 400.48126503953245,
+                "y": 304.2282571330354
             }
         },
         "Map/SalleMain.tmx#Escalier": {
@@ -133,8 +142,12 @@
         }
     },
     "openFiles": [
+        "Map/SalleMain.tmx"
     ],
     "project": "sans titre.tiled-project",
     "recentFiles": [
+        "Map/SalleMain.tmx",
+        "Map/SalleAmphiBoss.tmx",
+        "Map/SalleCours.tmx"
     ]
 }

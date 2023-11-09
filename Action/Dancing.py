@@ -2,7 +2,6 @@ import random
 import pygame
 
 import Monstre.Ennemi
-import Personnage.Personne
 
 
 class Dancing:
