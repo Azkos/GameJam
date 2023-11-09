@@ -64,14 +64,16 @@ class Sprite(pygame.sprite.Sprite):
 
     def checkTeleporte(self, carte, type):
         liste_collision = []
+        liste_nom = []
 
         for object in carte.objects:
             if object.type == type:
                 rect = pygame.Rect(object.x, object.y, object.width, object.height)
-                liste_collision.append((rect, object.name))
+                liste_collision.append(rect)
+                liste_nom.append(object.name)
         id_collision = self.rect.collidelist(liste_collision)
         if id_collision > -1:
-            return liste_collision[id_collision][1]
+            return "Map/"+liste_nom[id_collision]
         else:
             return False
 

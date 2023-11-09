@@ -12,6 +12,7 @@ def afficher_dialogue(fenetre, font, dialogues, dialogue_index, largeur, hauteur
     texte_dialogue = font.render(dialogues[dialogue_index], True, couleur)
     fenetre.blit(texte_dialogue, (60, hauteur - 140))
 
+
 def main():
     if len(sys.argv) > 1:
         nom_personnage = "Nom : " + sys.argv[1]
@@ -104,8 +105,7 @@ def main():
     }
 
     # Carte actuelle
-    carte_actuelle_nom = "SalleMain"
-    carte_actuelle = cartes[carte_actuelle_nom]
+    carte_actuelle_nom = "Map/SalleMain.tmx"
 
     # Boucle principale
     en_jeu = True
@@ -120,8 +120,8 @@ def main():
                         scene_actuelle = "credit"
                     else:
                         scene_actuelle = "jeu"
-                        carte_actuelle_nom = "SalleMain"
-                        carte_actuelle = cartes[carte_actuelle_nom]
+                        carte_actuelle_nom = "Map/SalleMain.tmx"
+
                 elif scene_actuelle == "credit":
                     if evenement.key == pygame.K_ESCAPE:
                         scene_actuelle = "titre"
@@ -130,8 +130,7 @@ def main():
                     if dialogue_index >= len(dialogues):
                         dialogue_actif = False
                         dialogue_index = 0
-                        carte_actuelle_nom = "SalleMainParallele"
-                        carte_actuelle = cartes[carte_actuelle_nom]
+                        carte_actuelle_nom = "Map/SalleMainParallele.tmx"
 
         if scene_actuelle == "titre":
             # Afficher l'arrière-plan de l'écran de titre
@@ -159,7 +158,7 @@ def main():
 
             pygame.mixer.music.stop()
 
-            genererSalle = GenererSalles("Map/SalleMain.tmx", fenetre, largeur, hauteur)
+            genererSalle = GenererSalles(carte_actuelle_nom, fenetre, largeur, hauteur)
             carte = genererSalle.genererSalle()
 
             mon_sprite.update()
@@ -178,7 +177,7 @@ def main():
             fenetre.blit(nom_personnage_texte, (10, 10))  # Position du texte
 
             # Interaction avec le pingouin sur la carte "SalleMain"
-            if carte_actuelle_nom == "SalleMain":
+            if carte_actuelle_nom == "Map/SalleMain.tmx":
                 if mon_sprite.checkCollision(carte, "dialogue"):
                     dialogue_actif = True
 
@@ -186,15 +185,11 @@ def main():
             if dialogue_actif:
                 afficher_dialogue(fenetre, font, dialogues, dialogue_index, largeur, hauteur, couleur_dialogue)
 
-            # Détecter la collision avec les portes et changer de carte
-            if not dialogue_actif and carte_actuelle_nom in portes_destinations:
-                x_personnage, y_personnage = mon_sprite.rect.x // carte_actuelle.tilewidth, mon_sprite.rect.y // carte_actuelle.tileheight
-                if (x_personnage, y_personnage) in portes_destinations[carte_actuelle_nom]:
-                    nom_carte, position = portes_destinations[carte_actuelle_nom][(x_personnage, y_personnage)]
-                    carte_actuelle_nom = nom_carte
-                    carte_actuelle = cartes[nom_carte]
-                    mon_sprite.rect.x, mon_sprite.rect.y = position
-
+            teleport = mon_sprite.checkTeleporte(carte, "Teleporte")
+            if teleport:
+                carte_actuelle_nom = teleport
+                genererSalle = GenererSalles(teleport, fenetre, largeur, hauteur)
+                carte=genererSalle.genererSalle()
             # Affichage du personnage
             sprites.draw(fenetre)
         print(clock)

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="left-up" width="25" height="19" tilewidth="32" tileheight="32" infinite="0" nextlayerid="22" nextobjectid="9">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="left-up" width="25" height="19" tilewidth="32" tileheight="32" infinite="0" nextlayerid="23" nextobjectid="23">
  <tileset firstgid="1" name="Sol" tilewidth="32" tileheight="32" tilecount="450" columns="25">
   <properties>
    <property name="Solid" type="bool" value="false"/>
@@ -97,6 +97,19 @@
   <object id="2" name="SalleCours.tmx" type="Teleporte" x="33.3333" y="258.333" width="30.5556" height="58.3333"/>
   <object id="3" name="SalleAmphiBoss.tmx" type="Teleporte" x="97.2222" y="25" width="93.0556" height="38.8889"/>
   <object id="4" name="SalleFace.tmx" type="Teleporte" x="386.111" y="16.6667" width="59.7222" height="44.4444"/>
-  <object id="8" x="766.551" y="-102.594"/>
+ </objectgroup>
+ <objectgroup id="22" name="Collision">
+  <object id="10" type="collision" x="1.93573" y="5.8072" width="63.8792" height="249.71"/>
+  <object id="11" type="collision" x="1.93573" y="323.268" width="61.9435" height="222.609"/>
+  <object id="13" type="collision" x="7.74293" y="547.813" width="522.648" height="56.1363"/>
+  <object id="14" type="collision" x="512.969" y="342.625" width="286.489" height="207.123"/>
+  <object id="15" type="collision" x="737.515" y="1.93573" width="58.072" height="127.758"/>
+  <object id="16" type="collision" x="737.515" y="191.638" width="63.8792" height="154.859"/>
+  <object id="17" type="collision" x="203.252" y="-7.74293" width="180.023" height="71.6221"/>
+  <object id="18" type="collision" x="449.09" y="0" width="286.489" height="67.7507"/>
+  <object id="19" type="collision" x="735.579" y="67.7507"/>
+  <object id="20" type="collision" x="193.573" y="69.6864" width="5.8072" height="90.9795"/>
+  <object id="21" type="collision" x="83.2365" y="67.7507" width="11.6144" height="90.9795"/>
+  <object id="22" x="69.6864" y="-135.501"/>
  </objectgroup>
 </map>
