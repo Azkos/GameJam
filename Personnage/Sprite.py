@@ -54,3 +54,16 @@ class Sprite(pygame.sprite.Sprite):
             return True
         else:
             return False
+
+    def checkTeleporte(self, carte, type):
+        liste_collision = []
+
+        for object in carte.objects:
+            if object.type == type:
+                rect = pygame.Rect(object.x, object.y, object.width, object.height)
+                liste_collision.append((rect, object.name))
+        if self.rect.collidelist(liste_collision) > -1:
+            return object.name
+        else:
+            return False
+
