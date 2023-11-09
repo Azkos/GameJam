@@ -35,27 +35,9 @@
  </tileset>
  <layer id="1" name="Sol1" width="25" height="19">
   <data encoding="base64" compression="zlib">
-   eJwLYGBgCBjFo3gUj+JRPIpHMc0wAChElHE=
+   eJyT5mFgkB7Fo3gUj+JRPIpHMc0wABrDSF4=
   </data>
  </layer>
- <objectgroup id="11" name="Collision">
-  <object id="22" type="collision" x="0" y="1.98376" width="603.062" height="66.4559"/>
-  <object id="23" type="collision" x="640.754" y="0" width="156.717" height="63.4803"/>
-  <object id="24" type="collision" x="735.974" y="61.4965" width="63.4803" height="511.81"/>
-  <object id="25" type="collision" x="62.4884" y="543.55" width="676.461" height="61.4965"/>
-  <object id="26" type="collision" x="3.96752" y="63.4803" width="58.5209" height="510.818"/>
-  <object id="29" name="SalleMainParallele.tmx" type="Teleporte" x="600.087" y="31.7401" width="45.6264" height="63.4803"/>
-  <object id="30" type="collision" x="613.973" y="218.213" width="84.3097" height="225.157"/>
-  <object id="31" type="collision" x="616.949" y="480.069" width="51.5777" height="30.7482"/>
-  <object id="33" type="collision" x="286.653" y="348.15" width="287.645" height="162.668"/>
-  <object id="34" type="collision" x="255.905" y="270.783" width="287.645" height="166.636"/>
-  <object id="37" type="collision" x="352.117" y="214.246" width="150.766" height="54.5533"/>
-  <object id="39" type="collision" x="95.2204" y="167.628" width="94.2285" height="113.074"/>
-  <object id="41" type="collision" x="95.2204" y="280.702" width="67.4478" height="92.2447"/>
-  <object id="42" type="collision" x="97.2041" y="413.614" width="66.4559" height="130.928"/>
-  <object id="43" type="collision" x="155.725" y="446.346" width="36.6995" height="96.2123"/>
-  <object id="47" type="collision" x="287.645" y="200.36" width="29.7564" height="35.7076"/>
- </objectgroup>
  <layer id="2" name="Mur1" width="25" height="19">
   <data encoding="base64" compression="zlib">
    eJzzY2Bg8KMx9gViJhpiXyQ7aAFG7Ri1Y9SOUTtG7RhYO2hZfxTTAQMArQ8drA==
@@ -83,7 +65,25 @@
  </layer>
  <layer id="7" name="Scene3" width="25" height="19">
   <data encoding="base64" compression="zlib">
-   eJzVk8suBEEUhk+aqHQJgpC4JjbWJFZYDCt2bUYy47KxEyQMZmbJM8y8Hl6Fv1Sf9Onq6u5KsHCSL1Vd/f916tSFyB+b4yU/fqj9jRxHiuhY1XvimEiD+zGiB9AFj+BJ0AN9MABT0E7H1tvB/BfgsibPLPRzYD6AHbAAFtMc15j7Ftz9UY6rgD3iWIJ+GawEsArWwDro1uQYThI1oDkA+1G5biOdh7UyduHbi6r9CTwn4NTRbGEsQTvSRNvKtqzNrVNbXL+MN/x7Bx9CM9B+PieyfpXfjWZk15CIsba2mDm5b5hJa2vrvL8V2VrKwvjY69Zhxrl/Lt6Ar46kMHNxHbyfRtvXll5KB9yIN8Dj7K87j0TA33x/ys5FnknoebSifA6+P993iWxrOFRZf6Qzfci9OtMWWZdv3U1VrMPdh6o65Hnw3WHcsRfkelWZf6irc5j1P3vqCCG0jv8cX4z9WFo=
+   eJztk8tKAzEUhg+jGCaiRUXBegE3rhVcqYvale60FayXjTtRQau2XeozOK9XfRX7h+QwxzQzE1B3/vAxYXL+c5lkiMLanCzY+GHsb9Q4VERHqtqTpkQaPEwQPYIueALPgh7ogwGYQexsar0d5L8EVxV15hA/DxYi2AGLYMnVuEHuO3D/RzWuI74RaxnxdbASwSpYA+ugW1HjfZqogZgDsJ8Ux224PBwrtQvfXlLuP4bnBJx6MVsuV6aJtpV9cuy3PrXF90sNsfcBPkXMQIf5msrXZX5frWS8hzNtMTl5baipfF/624mdpUjGV/Pm517Ne15fiH8gNEeZuA85S19beo4OuBX/AL9nf9V5hMT3p+hc5JnEnkfb2+f7k7k85mloqnydie8Vc6/OtUUq1HdLjc8Ro9B5GMn75L97Ra03lfvL7pSR6f8lMMe/rEa0c0x6
   </data>
  </layer>
+ <objectgroup id="11" name="Collision">
+  <object id="22" type="collision" x="0" y="1.98376" width="603.062" height="66.4559"/>
+  <object id="23" type="collision" x="640.754" y="0" width="156.717" height="63.4803"/>
+  <object id="24" type="collision" x="735.974" y="61.4965" width="63.4803" height="511.81"/>
+  <object id="25" type="collision" x="62.4884" y="543.55" width="676.461" height="61.4965"/>
+  <object id="26" type="collision" x="3.96752" y="63.4803" width="58.5209" height="510.818"/>
+  <object id="29" name="SalleMainParallele.tmx" type="Teleporte" x="600.087" y="31.7401" width="45.6264" height="63.4803"/>
+  <object id="30" type="collision" x="613.973" y="218.213" width="84.3097" height="225.157"/>
+  <object id="31" type="collision" x="616.949" y="480.069" width="51.5777" height="30.7482"/>
+  <object id="33" type="collision" x="286.653" y="348.15" width="287.645" height="162.668"/>
+  <object id="34" type="collision" x="255.905" y="270.783" width="287.645" height="166.636"/>
+  <object id="37" type="collision" x="352.117" y="214.246" width="150.766" height="54.5533"/>
+  <object id="39" type="collision" x="95.2204" y="167.628" width="94.2285" height="113.074"/>
+  <object id="41" type="collision" x="95.2204" y="280.702" width="67.4478" height="92.2447"/>
+  <object id="42" type="collision" x="97.2041" y="413.614" width="66.4559" height="130.928"/>
+  <object id="43" type="collision" x="155.725" y="446.346" width="36.6995" height="96.2123"/>
+  <object id="47" type="collision" x="287.645" y="200.36" width="29.7564" height="35.7076"/>
+ </objectgroup>
 </map>
