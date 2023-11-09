@@ -50,9 +50,14 @@ def main():
     scene_actuelle = "titre"
     dialogue_actif = False
     dialogues = [
-        "Bonjour, je suis un pingouin !",
-        "C'est un beau jour pour une aventure !",
-        "N'oubliez pas d'apporter votre équipement !"
+        "Bonjour, je suis ici pour vous préparer à vos épreuves",
+        "Vous devez rester en forme pour être au maximum ",
+        "Vous allez passer 3 épreuves de bases puis une final",
+        "Ces épreuves constitueront de danser au bon rythme ",
+        "Puis vous serez dans le rythme mieux ce sera",
+        "Je vais vous téléporter dans une dimension rythmé",
+        "Vous êtes prêt ? C'est parti !!!!!!"
+
     ]
     dialogue_index = 0
 
