@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="left-up" width="25" height="19" tilewidth="32" tileheight="32" infinite="0" nextlayerid="12" nextobjectid="48">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="left-up" width="25" height="19" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="49">
  <tileset firstgid="1" name="MurAmphi" tilewidth="32" tileheight="32" tilecount="266" columns="19">
   <properties>
    <property name="Solid" type="bool" value="true"/>
@@ -33,6 +33,7 @@
   </properties>
   <image source="Crazy.png" width="960" height="960"/>
  </tileset>
+ <tileset firstgid="3276" source="pingouin2.tsx"/>
  <layer id="1" name="Sol1" width="25" height="19">
   <data encoding="base64" compression="zlib">
    eJyT5mFgkB7Fo3gUj+JRPIpHMc0wABrDSF4=
@@ -68,6 +69,11 @@
    eJztk8tKAzEUhg+jGCaiRUXBegE3rhVcqYvale60FayXjTtRQau2XeozOK9XfRX7h+QwxzQzE1B3/vAxYXL+c5lkiMLanCzY+GHsb9Q4VERHqtqTpkQaPEwQPYIueALPgh7ogwGYQexsar0d5L8EVxV15hA/DxYi2AGLYMnVuEHuO3D/RzWuI74RaxnxdbASwSpYA+ugW1HjfZqogZgDsJ8Ux224PBwrtQvfXlLuP4bnBJx6MVsuV6aJtpV9cuy3PrXF90sNsfcBPkXMQIf5msrXZX5frWS8hzNtMTl5baipfF/624mdpUjGV/Pm517Ne15fiH8gNEeZuA85S19beo4OuBX/AL9nf9V5hMT3p+hc5JnEnkfb2+f7k7k85mloqnydie8Vc6/OtUUq1HdLjc8Ro9B5GMn75L97Ra03lfvL7pSR6f8lMMe/rEa0c0x6
   </data>
  </layer>
+ <layer id="12" name="perso" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFtABneBgYzvLQ1o5zQPPP09iOUTAKRsEoGAWUAwD+zQNn
+  </data>
+ </layer>
  <objectgroup id="11" name="Collision">
   <object id="22" type="collision" x="0" y="1.98376" width="603.062" height="66.4559"/>
   <object id="23" type="collision" x="640.754" y="0" width="156.717" height="63.4803"/>
@@ -85,5 +91,6 @@
   <object id="42" type="collision" x="97.2041" y="413.614" width="66.4559" height="130.928"/>
   <object id="43" type="collision" x="155.725" y="446.346" width="36.6995" height="96.2123"/>
   <object id="47" type="collision" x="287.645" y="200.36" width="29.7564" height="35.7076"/>
+  <object id="48" type="dance" x="347.324" y="98.6009" width="80.835" height="63.0691"/>
  </objectgroup>
 </map>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="left-up" width="25" height="19" tilewidth="32" tileheight="32" infinite="0" nextlayerid="9" nextobjectid="38">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="left-up" width="25" height="19" tilewidth="32" tileheight="32" infinite="0" nextlayerid="10" nextobjectid="40">
  <tileset firstgid="1" name="TableauNoir" tilewidth="32" tileheight="32" tilecount="40" columns="5">
   <properties>
    <property name="Solid" type="bool" value="true"/>
@@ -18,6 +18,7 @@
  <tileset firstgid="3280" name="Interieur" tilewidth="32" tileheight="32" tilecount="1424" columns="16">
   <image source="Interieur.png" width="512" height="2848"/>
  </tileset>
+ <tileset firstgid="4704" source="perso.tsx"/>
  <layer id="1" name="Mur1" width="25" height="19">
   <data encoding="base64" compression="zlib">
    eJyLZGBgiKIhjgbiLCDOpiHOQbKjkJH6eNSOUTtG7Ri1Y9SOgbWDHvUHLe0AAH4vzX4=
@@ -41,6 +42,11 @@
  <layer id="7" name="Fenetre3" width="25" height="19">
   <data encoding="base64" compression="zlib">
    eJxjYEAFi3kZGJbwMmAF6HK/BBgYfgsQrx8GNgPlt+BQgy7HJcjAwC1IvP5RMApGAQLMY6K9Hd/pYMcoGAVDHQAAhNQMjA==
+  </data>
+ </layer>
+ <layer id="9" name="perso" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2DoAwthBgZLILYSpp0dMUCzY4E4joZ2NADNbgTiJhraMQpGwSigPwAAX3kD8Q==
   </data>
  </layer>
  <objectgroup id="8" name="Calque d'Objets 1">
@@ -73,5 +79,6 @@
   <object id="35" type="collision" x="126.138" y="285.143" width="33.7553" height="33.7553"/>
   <object id="36" name="SalleMainParallele.tmx" type="Teleporte" x="732.845" y="285.143" width="19.5425" height="65.734"/>
   <object id="37" type="collision" x="0" y="58.6276" width="64.8457" height="79.0584"/>
+  <object id="39" type="dance" x="106.581" y="210.228" width="77.2465" height="114.403"/>
  </objectgroup>
 </map>

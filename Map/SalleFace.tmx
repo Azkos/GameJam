@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="left-up" width="25" height="19" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="38">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="left-up" width="25" height="19" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="40">
  <tileset firstgid="1" name="Room" tilewidth="32" tileheight="32" tilecount="391" columns="17">
   <image source="Room.png" width="544" height="736"/>
  </tileset>
@@ -12,6 +12,7 @@
  <tileset firstgid="1013" name="Interieur" tilewidth="32" tileheight="32" tilecount="1424" columns="16">
   <image source="Interieur.png" width="512" height="2848"/>
  </tileset>
+ <tileset firstgid="2437" source="perso.tsx"/>
  <layer id="1" name="Mur1" width="25" height="19">
   <properties>
    <property name="Solid" type="bool" value="true"/>
@@ -33,15 +34,16 @@
    eJzN1EdMFFEcx/G3dWZ2aReRtrsototgwXLSkw1kF8F2NkFFbPFuA1TsvUSKot6wAR4tUQ94QNGbYgGvEBUQFUHA72Zf4jC+xRgO+pJPZvc/836/mWGDEKOvCpsQB3EIh3EER3EMx3HC9ocAy8rUhMjSIp8L5PEkGadwGmdwFudwHhdQh1Ku7XcKMYBWvHZG71jAtQtl9jp5vEhGJapQjRpcwmXU4kr4HrjW4xLCiw7yO0fpCHJtSGbvkMfrZNzATdzCbdSjAY24E+7R/u59jWXV6vThKq7p6mta3bxLd+TzIPc3hOHw39QuhA12OOC0R65xc9Sgy+/15DagMUp+eHWQ3yk7xrEvEeORhGSkIBVp8MGPANJlx0OyH+FxlI77zB+Yzk1nXyayMAMzMQuzkY05mIt5mC87nrP/Be7inqLnGbMW03wR+xZjCZZiGXKQi+XIQxAh5MuOdva/RzOeKjreMWuL8owvyXhlV59rY95uOfeGnLeKrCFmw6b5B/Z9xCd0oRs9+IxefMFXfEOfpeMHOYOKjjhDiHjj13eXg98NNOgw4IEXMYhFHOKR4BiZFUNOrCF+W35mAdPcxz4/AkjHBExEBiZhMqZgKqZZOtLI8Sk6+nm2AdPz5bEviBDysQIFKMRKrMJqrMFaS0cfOd8V78pDr9fUXcS+9diAjSjGJpRgM7ZgK7Zhu6VDJ8dQPEcKs1TTfCf7dmE39mAvSlGGcuzDfhxAhaUjiZxkRcf/spr43/3E9a/vQr1+AgJDb5o=
   </data>
  </layer>
- <objectgroup id="5" name="Calque d'Objets 2">
-  <object id="31" type="Teleporte" x="352.654" y="545.414" width="63.9574" height="25.7606"/>
-  <object id="32" x="99.4892" y="-47.968"/>
- </objectgroup>
  <layer id="6" name="player" width="25" height="19">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjIJRMApGAS0BAAdsAAE=
+   eJxjYBgFtAAW3AwMlkBsxU07O2KAZscCcRwN7WgAmt0IxE00tGMUjIJRMAqGOwAAcJ0DqQ==
   </data>
  </layer>
+ <objectgroup id="5" name="Calque d'Objets 2">
+  <object id="31" name="SalleMainParallele.tmx" type="Teleporte" x="352.654" y="545.414" width="63.9574" height="25.7606"/>
+  <object id="32" x="99.4892" y="-47.968"/>
+  <object id="39" type="dance" x="358.326" y="85.9001" width="89.5815" height="110.443"/>
+ </objectgroup>
  <objectgroup id="4" name="Calque d'Objets 1">
   <object id="1" type="collision" x="-0.631804" y="65.8446" width="62.8126" height="480.311"/>
   <object id="2" type="collision" x="1.77659" y="0.888297" width="797.937" height="61.2925"/>
