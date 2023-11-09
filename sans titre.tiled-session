@@ -112,8 +112,8 @@
             "scale": 0.8727,
             "selectedLayer": 6,
             "viewCenter": {
-                "x": 464.64993697719717,
-                "y": 330.5832473931477
+                "x": 400.48126503953245,
+                "y": 304.2282571330354
             }
         },
         "Map/SalleMain.tmx#Escalier": {
@@ -147,7 +147,7 @@
     "project": "sans titre.tiled-project",
     "recentFiles": [
         "Map/SalleMain.tmx",
-        "Map/SalleCours.tmx",
-        "Map/SalleAmphiBoss.tmx"
+        "Map/SalleAmphiBoss.tmx",
+        "Map/SalleCours.tmx"
     ]
 }
