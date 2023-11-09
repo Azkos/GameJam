@@ -120,8 +120,8 @@ def main():
                         scene_actuelle = "credit"
                     else:
                         scene_actuelle = "jeu"
-                        carte_actuelle_nom = "Map/SalleMain.tmx"
-
+                        carte_actuelle_nom = "SalleMain"
+                        carte_actuelle = cartes[carte_actuelle_nom]
                 elif scene_actuelle == "credit":
                     if evenement.key == pygame.K_ESCAPE:
                         scene_actuelle = "titre"
@@ -137,7 +137,7 @@ def main():
             fenetre.blit(fond, (0, 0))
             fenetre.blit(titre_texte, titre_texte.get_rect(center=(largeur // 2, hauteur // 2 - 50)))
             fenetre.blit(jouer_texte, jouer_texte.get_rect(center=(largeur // 2, hauteur // 2 + 50)))
-            fenetre.blit(credit_texte, credit_texte.get_rect(center=(largeur //2, hauteur // 2 + 100)))
+            fenetre.blit(credit_texte, credit_texte.get_rect(center=(largeur // 2, hauteur // 2 + 100)))
 
         elif scene_actuelle == "credit":
             fenetre.fill("black")
@@ -146,13 +146,14 @@ def main():
                            "Kevin Zheng : Level Designer",
                            "Théo Besset : Scénariste",
                            "Musiques et Bruitages : https://lasonotheque.org",
+                           "https://iut2.univ-grenoble-alpes.fr",
                            "Images et Sprites : "]
             pos_x = 50
             pos_y = 50
             for texte in cred_textes:
                 fenetre.blit(font.render(texte, True, "white"), (pos_x, pos_y))
                 pos_y += 50
-            fenetre.blit(font.render("Echap pour sortir", True, "white"), (20, hauteur-50))
+            fenetre.blit(font.render("Echap pour sortir", True, "white"), (20, hauteur - 50))
 
         elif scene_actuelle == "jeu":
 
