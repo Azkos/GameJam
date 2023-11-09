@@ -101,6 +101,6 @@
   <object id="28" type="collision" x="395.325" y="496.161" width="41.2513" height="14.8963"/>
   <object id="29" type="collision" x="514.495" y="313.968" width="223.444" height="38.9596"/>
   <object id="30" x="506.474" y="814.713"/>
-  <object id="32" type="interagir" x="286.467" y="320.843" width="72.1898" height="65.3145"/>
+  <object id="32" type="dialogue" x="286.467" y="320.843" width="72.1898" height="65.3145"/>
  </objectgroup>
 </map>
