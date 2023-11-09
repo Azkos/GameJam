@@ -19,6 +19,7 @@
   <image source="Interieur.png" width="512" height="2848"/>
  </tileset>
  <tileset firstgid="4704" source="perso.tsx"/>
+ <tileset firstgid="5568" source="perso.tsx"/>
  <layer id="1" name="Mur1" width="25" height="19">
   <data encoding="base64" compression="zlib">
    eJyLZGBgiKIhjgbiLCDOpiHOQbKjkJH6eNSOUTtG7Ri1Y9SOgbWDHvUHLe0AAH4vzX4=
@@ -46,7 +47,7 @@
  </layer>
  <layer id="9" name="perso" width="25" height="19">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2DoAwthBgZLILYSpp0dMUCzY4E4joZ2NADNbgTiJhraMQpGwSigPwAAX3kD8Q==
+   eJxjYBgFo2DogxliDAwzgXiWGO3s2AM0ey8Q76OhHQ+AZj8E4kc0tGMUjIJRQH8AAB0TB2w=
   </data>
  </layer>
  <objectgroup id="8" name="Calque d'Objets 1">

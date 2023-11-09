@@ -70,7 +70,7 @@
                 5
             ],
             "scale": 0.8149,
-            "selectedLayer": 4,
+            "selectedLayer": 3,
             "viewCenter": {
                 "x": 387.1640692109462,
                 "y": 291.4468032887471
@@ -94,7 +94,7 @@
                 7
             ],
             "scale": 1.12575,
-            "selectedLayer": 6,
+            "selectedLayer": 5,
             "viewCenter": {
                 "x": 400.177659338219,
                 "y": 304.2416166999777
@@ -195,6 +195,12 @@
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
+        "Map/perso.tsx": {
+            "scaleInEditor": 1
+        },
+        "Map/pingouin2.tsx": {
+            "scaleInEditor": 1
+        },
         "Map/player.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
@@ -206,6 +212,8 @@
     ],
     "project": "sans titre.tiled-project",
     "recentFiles": [
+        "Map/pingouin2.tsx",
+        "Map/perso.tsx",
         "Map/mob1.tsx",
         "Map/player.tsx",
         "Map/SalleFace.tmx",

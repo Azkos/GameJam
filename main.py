@@ -176,6 +176,8 @@ def main():
 
             fenetre.blit(mon_sprite.image, mon_sprite.rect)
 
+
+
             # Afficher le nom du personnage en haut à gauche
             nom_personnage_texte = font.render(nom_personnage, True, couleur_titre)
             fenetre.blit(nom_personnage_texte, (10, 10))  # Position du texte
