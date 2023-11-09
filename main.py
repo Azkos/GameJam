@@ -183,6 +183,7 @@ def main():
             if dialogue_actif:
                 afficher_dialogue(fenetre, font, dialogues, dialogue_index, largeur, hauteur, couleur_dialogue)
 
+
             teleport = mon_sprite.checkTeleporte(carte, "Teleporte")
             if teleport:
                 carte_actuelle_nom = teleport

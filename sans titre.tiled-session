@@ -17,7 +17,7 @@
                 11
             ],
             "scale": 1.12575,
-            "selectedLayer": 1,
+            "selectedLayer": 0,
             "viewCenter": {
                 "x": 398.4010659560293,
                 "y": 302.46502331778817
@@ -91,7 +91,7 @@
                 7
             ],
             "scale": 1.12575,
-            "selectedLayer": 6,
+            "selectedLayer": 5,
             "viewCenter": {
                 "x": 400.177659338219,
                 "y": 304.2416166999777
@@ -186,6 +186,7 @@
             "scaleInDock": 1
         }
     },
+    "last.imagePath": "C:/Users/rebel/OneDrive/Bureau/Cours/GameJam/sprite",
     "openFiles": [
         "Map/SalleMain.tmx"
     ],
@@ -195,5 +196,6 @@
         "Map/SalleCours.tmx",
         "Map/SalleMain.tmx",
         "Map/SalleAmphiBoss.tmx"
-    ]
+    ],
+    "tileset.lastUsedFormat": "tsx"
 }

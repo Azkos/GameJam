@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="left-up" width="25" height="19" tilewidth="32" tileheight="32" infinite="0" nextlayerid="23" nextobjectid="23">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="left-up" width="25" height="19" tilewidth="32" tileheight="32" infinite="0" nextlayerid="22" nextobjectid="38">
  <tileset firstgid="1" name="Sol" tilewidth="32" tileheight="32" tilecount="450" columns="25">
   <properties>
    <property name="Solid" type="bool" value="false"/>
@@ -41,8 +41,8 @@
    </properties>
   </tile>
  </tileset>
- <tileset firstgid="4302" name="jp le retour" tilewidth="32" tileheight="32" tilecount="4" columns="1">
-  <image source="pingouin2.png" width="62" height="60"/>
+ <tileset firstgid="4302" name="jp le retour" tilewidth="32" tileheight="32" tilecount="4" columns="2">
+  <image source="pingouin2.png" width="64" height="64"/>
  </tileset>
  <tileset firstgid="4306" name="Interiors_free_32x32_gd" tilewidth="32" tileheight="32" tilecount="1424" columns="89">
   <image source="Interiors_free_32x32_gd.png" width="2848" height="512"/>
@@ -97,19 +97,32 @@
   <object id="2" name="SalleCours.tmx" type="Teleporte" x="33.3333" y="258.333" width="30.5556" height="58.3333"/>
   <object id="3" name="SalleAmphiBoss.tmx" type="Teleporte" x="97.2222" y="25" width="93.0556" height="38.8889"/>
   <object id="4" name="SalleFace.tmx" type="Teleporte" x="386.111" y="16.6667" width="59.7222" height="44.4444"/>
- </objectgroup>
- <objectgroup id="22" name="Collision">
-  <object id="10" type="collision" x="1.93573" y="5.8072" width="63.8792" height="249.71"/>
-  <object id="11" type="collision" x="1.93573" y="323.268" width="61.9435" height="222.609"/>
-  <object id="13" type="collision" x="7.74293" y="547.813" width="522.648" height="56.1363"/>
-  <object id="14" type="collision" x="512.969" y="342.625" width="286.489" height="207.123"/>
-  <object id="15" type="collision" x="737.515" y="1.93573" width="58.072" height="127.758"/>
-  <object id="16" type="collision" x="737.515" y="191.638" width="63.8792" height="154.859"/>
-  <object id="17" type="collision" x="203.252" y="-7.74293" width="180.023" height="71.6221"/>
-  <object id="18" type="collision" x="449.09" y="0" width="286.489" height="67.7507"/>
-  <object id="19" type="collision" x="735.579" y="67.7507"/>
-  <object id="20" type="collision" x="193.573" y="69.6864" width="5.8072" height="90.9795"/>
-  <object id="21" type="collision" x="83.2365" y="67.7507" width="11.6144" height="90.9795"/>
-  <object id="22" x="69.6864" y="-135.501"/>
+  <object id="8" x="766.551" y="-102.594"/>
+  <object id="9" type="collision" x="1.77659" y="-0.888297" width="60.4042" height="256.718"/>
+  <object id="10" type="collision" x="0.888297" y="256.718" width="31.0904" height="351.765"/>
+  <object id="12" type="collision" x="32.867" y="318.01" width="29.3138" height="286.92"/>
+  <object id="13" type="collision" x="62.1808" y="542.749" width="735.51" height="63.0691"/>
+  <object id="15" type="collision" x="511.659" y="351.765" width="286.032" height="191.872"/>
+  <object id="16" type="collision" x="733.733" y="186.542" width="64.8457" height="164.335"/>
+  <object id="18" type="collision" x="735.51" y="3.55319" width="63.9574" height="127.026"/>
+  <object id="19" type="collision" x="63.9574" y="-0.888297" width="33.7553" height="62.1808"/>
+  <object id="20" type="collision" x="62.1808" y="350.877" width="131.468" height="190.095"/>
+  <object id="21" type="collision" x="224.739" y="191.872" width="59.5159" height="111.037"/>
+  <object id="22" type="collision" x="238.952" y="174.106" width="28.4255" height="167.888"/>
+  <object id="23" type="collision" x="225.627" y="385.521" width="57.7393" height="111.925"/>
+  <object id="24" type="collision" x="238.952" y="365.978" width="30.2021" height="145.681"/>
+  <object id="25" type="collision" x="198.978" y="456.584" width="50.6329" height="84.3882"/>
+  <object id="26" type="collision" x="261.159" y="63.0691" width="23.0957" height="31.0904"/>
+  <object id="27" type="collision" x="326.893" y="72.8403" width="20.4308" height="30.2021"/>
+  <object id="28" type="collision" x="382.856" y="186.542" width="58.6276" height="126.138"/>
+  <object id="29" type="collision" x="399.734" y="174.106" width="27.5372" height="172.33"/>
+  <object id="30" type="collision" x="446.813" y="229.181" width="47.0797" height="86.1648"/>
+  <object id="31" type="collision" x="429.936" y="313.569" width="48.8563" height="33.7553"/>
+  <object id="32" type="collision" x="383.744" y="385.521" width="59.5159" height="110.149"/>
+  <object id="33" type="collision" x="398.845" y="365.978" width="31.0904" height="145.681"/>
+  <object id="34" type="collision" x="480.569" y="508.994" width="28.4255" height="33.7553"/>
+  <object id="35" type="collision" x="481.457" y="353.542" width="28.4255" height="30.2021"/>
+  <object id="36" type="collision" x="510.771" y="332.223" width="222.962" height="18.6542"/>
+  <object id="37" type="collision" x="702.643" y="258.494" width="29.3138" height="27.5372"/>
  </objectgroup>
 </map>
