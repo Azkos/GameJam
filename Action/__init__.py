@@ -1,0 +1,2 @@
+class Dancing:
+    pass
