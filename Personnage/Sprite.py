@@ -69,8 +69,9 @@ class Sprite(pygame.sprite.Sprite):
             if object.type == type:
                 rect = pygame.Rect(object.x, object.y, object.width, object.height)
                 liste_collision.append((rect, object.name))
-        if self.rect.collidelist(liste_collision) > -1:
-            return object.name
+        id_collision = self.rect.collidelist(liste_collision)
+        if id_collision > -1:
+            return liste_collision[id_collision][1]
         else:
             return False
 
