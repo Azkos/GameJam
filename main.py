@@ -159,7 +159,7 @@ def main():
             carte = genererSalle.genererSalle()
 
             mon_sprite.deplacement(8)
-            if mon_sprite.checkCollision(carte):
+            if mon_sprite.checkCollision(carte, "collision"):
                 mon_sprite.rect.x = mon_sprite.last_pos[0]
                 mon_sprite.rect.y = mon_sprite.last_pos[1]
 
@@ -171,8 +171,7 @@ def main():
 
             # Interaction avec le pingouin sur la carte "SalleMain"
             if carte_actuelle_nom == "SalleMain":
-                pingouin_rect = pygame.Rect(350, 320, 32, 32)  # Rectangle fictif pour le pingouin
-                if mon_sprite.rect.colliderect(pingouin_rect):
+                if mon_sprite.checkCollision(carte, "dialogue"):
                     dialogue_actif = True
 
             # Affichage du dialogue si actif
