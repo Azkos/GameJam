@@ -68,7 +68,7 @@ def main():
     # Cartes préchargées
     cartes = {
         "SalleMain": pytmx.util_pygame.load_pygame('Map/SalleMain.tmx'),
-            "SalleMainParallele": pytmx.util_pygame.load_pygame('Map/SalleMainParallele.tmx'),
+        "SalleMainParallele": pytmx.util_pygame.load_pygame('Map/SalleMainParallele.tmx'),
         "SalleAmphiBoss": pytmx.util_pygame.load_pygame('Map/SalleAmphiBoss.tmx'),
         "SalleFace": pytmx.util_pygame.load_pygame('Map/SalleFace.tmx'),
         "SalleCours": pytmx.util_pygame.load_pygame('Map/SalleCours.tmx'),
@@ -167,8 +167,6 @@ def main():
             if mon_sprite.checkCollision(carte, "collision"):
                 mon_sprite.rect.x = mon_sprite.last_pos[0]
                 mon_sprite.rect.y = mon_sprite.last_pos[1]
-
-
 
             fenetre.blit(mon_sprite.image, mon_sprite.rect)
 
