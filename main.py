@@ -24,7 +24,7 @@ def main():
     # Dimensions de la fenêtre
     largeur, hauteur = 800, 600
     fenetre = pygame.display.set_mode((largeur, hauteur))
-    pygame.display.set_caption("Nom du jeu")
+    pygame.display.set_caption("IUT Rythm Quest")
 
     # Couleurs
     couleur_titre = (0, 0, 0)
@@ -38,7 +38,7 @@ def main():
     fond = pygame.transform.scale(fond, (largeur, hauteur))
 
     # Texte de l'écran de titre
-    titre_texte = font.render("Mon Jeu", True, couleur_titre)
+    titre_texte = font.render("IUT Rythm Quest", True, couleur_titre)
     jouer_texte = font.render("Appuyez sur une touche pour commencer le jeu", True, couleur_titre)
     credit_texte = font.render("Appuez sur 'c' pour ouvrir les crédits", True, couleur_titre)
 
@@ -128,9 +128,12 @@ def main():
                     if evenement.key == pygame.K_ESCAPE:
                         scene_actuelle = "titre"
                 elif dialogue_actif and evenement.key == pygame.K_SPACE:
+                    pygame.mixer_music.load("Musique/bruit_parler.mp3")
+                    pygame.mixer_music.play()
                     dialogue_index += 1
                     if dialogue_index >= len(dialogues):
                         dialogue_actif = False
+                        pygame.mixer_music.stop()
                         dialogue_index = 0
                         carte_actuelle_nom = "Map/SalleMainParallele.tmx"
 
