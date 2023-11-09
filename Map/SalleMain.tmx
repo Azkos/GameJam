@@ -66,7 +66,7 @@
  </layer>
  <layer id="11" name="JP4" width="25" height="19">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjAIGhnMCDAznBWhrxwWg+RdpbMcoGAWDEQAAGq0Dfw==
+   eJxjYBgZ4JwAA8N5AdracQFo/kUa2zEKRsEoGAWjYOgBABMKA38=
   </data>
  </layer>
  <layer id="9" name="Poteau3" width="25" height="19">
@@ -100,7 +100,6 @@
   <object id="27" type="collision" x="396.471" y="365.532" width="35.5219" height="16.0422"/>
   <object id="28" type="collision" x="395.325" y="496.161" width="41.2513" height="14.8963"/>
   <object id="29" type="collision" x="514.495" y="313.968" width="223.444" height="38.9596"/>
-  <object id="30" x="506.474" y="814.713"/>
-  <object id="32" type="dialogue" x="286.467" y="320.843" width="72.1898" height="65.3145"/>
+  <object id="32" type="dialogue" x="253.237" y="66.4601" width="72.1898" height="65.3145"/>
  </objectgroup>
 </map>

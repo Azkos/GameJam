@@ -2,11 +2,9 @@ import pygame
 
 largeur = 600
 hauteur = 800
-sprite_walk1 = pygame.image.load("sprite/chara-walk1.png")
-sprite_walk2 = pygame.image.load("sprite/chara-walk2.png")
 
+sprite_walk1 = pygame.image.load("sprite/chara-walk1.png")
 sprite_walk1 = pygame.transform.scale(sprite_walk1, (sprite_walk1.get_width() // 5, sprite_walk1.get_height() // 5))
-sprite_walk2 = pygame.transform.scale(sprite_walk2, (sprite_walk2.get_width() // 2, sprite_walk2.get_height() // 2))
 
 
 class Sprite(pygame.sprite.Sprite):
@@ -14,9 +12,11 @@ class Sprite(pygame.sprite.Sprite):
         super().__init__()
         self.image = sprite_walk1
         self.rect = self.image.get_rect()
-        self.rect.center = (largeur // 2, hauteur // 3)  # Position initiale du sprite
+        self.hitbox = pygame.Rect(self.rect.left, self.rect.bottom-10, self.rect.width, 10)
+        self.rect.center = (largeur // 3, hauteur // 3)  # Position initiale du sprite
         self.facing_left = False
         self.last_pos = (self.rect.x, self.rect.y)
+
 
     def deplacement(self, vitesse):
         touches = pygame.key.get_pressed()
