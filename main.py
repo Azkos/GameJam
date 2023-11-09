@@ -66,13 +66,13 @@ def main():
     sprites = pygame.sprite.Group(mon_sprite)
 
     # Cartes préchargées
-    cartes = {
-        "SalleMain": pytmx.util_pygame.load_pygame('Map/SalleMain.tmx'),
-        "SalleMainParallele": pytmx.util_pygame.load_pygame('Map/SalleMainParallele.tmx'),
-        "SalleAmphiBoss": pytmx.util_pygame.load_pygame('Map/SalleAmphiBoss.tmx'),
-        "SalleFace": pytmx.util_pygame.load_pygame('Map/SalleFace.tmx'),
-        "SalleCours": pytmx.util_pygame.load_pygame('Map/SalleCours.tmx'),
-        "SalleInfo": pytmx.util_pygame.load_pygame('Map/SalleInfo.tmx'),
+    spawn = {
+        "Map/SalleMain.tmx": (570, 32),
+        'Map/SalleMainParallele.tmx': (100, 100),
+        'Map/SalleAmphiBoss.tmx': (570, 32),
+        'Map/SalleFace.tmx': (330, 500),
+        'Map/SalleCours.tmx': (640, 236),
+        'Map/SalleInfo.tmx': (32, 224),
     }
 
     # Portes et destinations pour toutes les cartes
@@ -187,6 +187,9 @@ def main():
             teleport = mon_sprite.checkTeleporte(carte, "Teleporte")
             if teleport:
                 carte_actuelle_nom = teleport
+                mon_sprite.rect.x = spawn[carte_actuelle_nom][0]
+                mon_sprite.rect.y = spawn[carte_actuelle_nom][1]
+
             # Affichage du personnage
             sprites.draw(fenetre)
         print(clock)
