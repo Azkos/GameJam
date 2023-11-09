@@ -14,7 +14,7 @@ class Sprite(pygame.sprite.Sprite):
         super().__init__()
         self.image = sprite_walk1
         self.rect = self.image.get_rect()
-        self.rect.center = (largeur // 2, hauteur // 2)  # Position initiale du sprite
+        self.rect.center = (largeur // 2, hauteur // 3)  # Position initiale du sprite
         self.facing_left = False
         self.last_pos = (self.rect.x, self.rect.y)
 
@@ -43,11 +43,11 @@ class Sprite(pygame.sprite.Sprite):
         self.rect.x += direction[0]
         self.rect.y += direction[1]
 
-    def checkCollision(self, carte):
+    def checkCollision(self, carte, type):
         liste_collision = []
 
         for object in carte.objects:
-            if object.type == "collision":
+            if object.type == type:
                 rect = pygame.Rect(object.x, object.y, object.width, object.height)
                 liste_collision.append(rect)
         if self.rect.collidelist(liste_collision) > -1:
