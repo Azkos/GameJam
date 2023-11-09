@@ -1,55 +1,56 @@
 import pygame
 import sys
-
 import Action.Dancing as Dan
 import Monstre.Ennemi as En
 from Personnage.Sprite import Sprite
 from Map.GenererSalles import GenererSalles
 
 
+# Fonction pour afficher la boîte de dialogue
 def afficher_dialogue(fenetre, font, dialogues, dialogue_index, largeur, hauteur, couleur):
-    # Affiche la boîte de dialogue avec le texte actuel
     pygame.draw.rect(fenetre, (0, 0, 0), (50, hauteur - 150, largeur - 100, 100))
     texte_dialogue = font.render(dialogues[dialogue_index], True, couleur)
     fenetre.blit(texte_dialogue, (60, hauteur - 140))
 
+
+# Fonction pour lancer la danse
 def lancer_dance(fenetre, carte_nom, sprite, dance):
     res = True
     if not dance[carte_nom]:
+        # Créer un ennemi en fonction de la carte
         if carte_nom == "Map/SalleAmphiBoss.tmx":
-                ennemi = En.Ennemi(3, "sprite/pinguin2.png")
-                dance = Dan.Dancing(sprite, ennemi, fenetre)
-                res = dance.dance()
+            ennemi = En.Ennemi(3, "sprite/pinguin2.png")
         elif carte_nom == "Map/SalleFace.tmx":
-                ennemi = En.Ennemi(2, "sprite/perso4.png")
-                dance = Dan.Dancing(sprite, ennemi, fenetre)
-                res = dance.dance()
+            ennemi = En.Ennemi(2, "sprite/perso4.png")
         elif carte_nom == "Map/SalleCours.tmx":
-                ennemi = En.Ennemi(1, "sprite/perso3.png")
-                dance = Dan.Dancing(sprite, ennemi, fenetre)
-                res = dance.dance()
+            ennemi = En.Ennemi(1, "sprite/perso3.png")
         elif carte_nom == "Map/SalleInfo.tmx":
-                ennemi = En.Ennemi(1, "sprite/perso2.png")
-                dance = Dan.Dancing(sprite, ennemi, fenetre)
-                res = dance.dance()
+            ennemi = En.Ennemi(1, "sprite/perso2.png")
+
+        # Lancer la danse
+        dance = Dan.Dancing(sprite, ennemi, fenetre)
+        res = dance.dance()
+
     return res
 
 
-
+# Fonction principale du jeu
 def main():
+    # Initialisation de Pygame
+    pygame.init()
+
+    # Récupére l'argument correspondant au nom du joueur
     if len(sys.argv) > 1:
         nom_personnage = "Nom : " + sys.argv[1]
     else:
         nom_personnage = "Nom : no idea"
 
-    # Initialisation de Pygame
-    pygame.init()
     # Dimensions de la fenêtre
     largeur, hauteur = 800, 600
     fenetre = pygame.display.set_mode((largeur, hauteur))
     pygame.display.set_caption("IUT Rythm Quest")
 
-    #progression dans le jeu
+    # progression dans le jeu
     dance_reussi = 0
     dance = {
         'Map/SalleAmphiBoss.tmx': False,
@@ -117,6 +118,7 @@ def main():
     clock = pygame.time.Clock()
     while en_jeu:
         for evenement in pygame.event.get():
+            # Gestion des événements
             if evenement.type == pygame.QUIT:
                 en_jeu = False
             elif evenement.type == pygame.KEYDOWN:
@@ -126,9 +128,8 @@ def main():
                     else:
                         scene_actuelle = "jeu"
                         carte_actuelle_nom = "Map/SalleMain.tmx"
-                        pygame.mixer.music.stop()
                         pygame.mixer_music.load("Musique/musique.mp3")
-                        pygame.mixer_music.play(-1)
+                        pygame.mixer_music.play()
                 elif scene_actuelle == "credit":
                     if evenement.key == pygame.K_ESCAPE:
                         scene_actuelle = "titre"
@@ -159,8 +160,8 @@ def main():
                            "Kevin Zheng : Level Designer",
                            "Théo Besset : Scénariste",
                            "Musiques et Bruitages : https://lasonotheque.org",
-                                                    "My Life for Witherlimb de Will Savino",
-                                                    "Voix : Sans de Undertale",
+                           "My Life for Witherlimb de Will Savino",
+                           "Voix : Sans de Undertale",
                            "Images et Sprites : https://iut2.univ-grenoble-alpes.fr",
                            "https://ccrgeek.wordpress.com/2016/01/01/mv-school-tile-set/",
                            "https://fallinlovewithyou-raura.blogspot.com/2021/01/pixel-art-character-generator-please.html"]
@@ -173,18 +174,15 @@ def main():
 
         elif scene_actuelle == "jeu":
 
-
-
             genererSalle = GenererSalles(carte_actuelle_nom, fenetre, largeur, hauteur)
             carte = genererSalle.genererSalle()
 
             mon_sprite.update()
 
-            mon_sprite.deplacement(8)
+            mon_sprite.deplacement(10)
             if mon_sprite.checkCollision(carte, "collision"):
                 mon_sprite.rect.x = mon_sprite.last_pos[0]
                 mon_sprite.rect.y = mon_sprite.last_pos[1]
-
 
             fenetre.blit(mon_sprite.image, mon_sprite.rect)
 
@@ -204,7 +202,6 @@ def main():
             if dialogue_actif:
                 afficher_dialogue(fenetre, font, dialogues, dialogue_index, largeur, hauteur, couleur_dialogue)
 
-
             teleport = mon_sprite.checkTeleporte(carte, "Teleporte")
             if teleport:
                 carte_actuelle_nom = teleport
@@ -221,33 +218,38 @@ def main():
                     if fini:
                         # affichage victoire
                         scene_actuelle = "victoire"
+                        pygame.mixer_music.load("Musique/win.mp3")
+                        pygame.mixer_music.play()
                         dance_reussi = 0
                     else:
-                        #dialogue félicitation et continuer
+                        # dialogue félicitation et continuer
                         felicitation = ["Explore les autres salles pour finir ton entrainement"]
                         for i in range(len(felicitation)):
                             afficher_dialogue(fenetre, font, felicitation, i, largeur, hauteur, couleur_dialogue)
 
 
                 else:
-                    #affichage écran de défaite
+                    # affichage écran de défaite
                     scene_actuelle = "fin"
+                    pygame.mixer_music.load("Musique/loose.mp3")
+                    pygame.mixer_music.play()
                     dance_reussi = 0
-
 
             # Affichage du personnage
             sprites.draw(fenetre)
 
         elif scene_actuelle == "fin":
             fenetre.fill("black")
-            fin_textes = ["Vous avez perdu !", "Vous aurez plus de chance la prochaine fois", "Appuyez sur espace pour revenir au menu pricipal"]
+            fin_textes = ["Vous avez perdu !", "Vous aurez plus de chance la prochaine fois",
+                          "Appuyez sur espace pour revenir au menu pricipal"]
             fin_font = []
             for texte in fin_textes:
                 fin_font.append(font.render(texte, True, "red"))
             pos_y = 50
             for elem in fin_font:
-                fenetre.blit(elem, (largeur//2-elem.get_rect().center[0], pos_y))
+                fenetre.blit(elem, (largeur // 2 - elem.get_rect().center[0], pos_y))
                 pos_y += 50
+
 
         elif scene_actuelle == "victoire":
             fenetre.fill("white")
@@ -261,11 +263,9 @@ def main():
                 vict_font.append(font.render(texte, True, "black"))
             pos_y = 50
             for elem in vict_font:
-                fenetre.blit(elem, (largeur//2-elem.get_rect().center[0], pos_y))
+                fenetre.blit(elem, (largeur // 2 - elem.get_rect().center[0], pos_y))
                 pos_y += 50
 
-
-        print(clock)
         clock.tick(60)
 
         pygame.display.flip()

@@ -13,7 +13,6 @@
   <image source="Interieur.png" width="512" height="2848"/>
  </tileset>
  <tileset firstgid="2437" source="perso.tsx"/>
- <tileset firstgid="3301" source="perso.tsx"/>
  <layer id="1" name="Mur1" width="25" height="19">
   <properties>
    <property name="Solid" type="bool" value="true"/>
@@ -37,7 +36,7 @@
  </layer>
  <layer id="6" name="player" width="25" height="19">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFtAAz+BgYZgLxLD7a2bEHaPZeIN5HQzseAM1+CMSPaGjHKBgFo2AUDHcAAC9SByQ=
+   eJxjYBgFtAAW3AwMlkBsxU07O2KAZscCcRwN7WgAmt0IxE00tGMUjIJRMAqGOwAAcJ0DqQ==
   </data>
  </layer>
  <objectgroup id="5" name="Calque d'Objets 2">
@@ -55,7 +54,7 @@
   <object id="7" type="collision" x="278.037" y="59.5159" width="253.165" height="66.6223"/>
   <object id="8" type="collision" x="97.7126" y="60.4042" width="63.0691" height="55.9627"/>
   <object id="9" type="collision" x="193.649" y="57.7393" width="29.3138" height="53.2978"/>
-  <object id="10" type="collision" x="95.0477" y="160.782" width="66.6223" height="64.8457"/>
+  <object id="10" type="collision" x="95.0477" y="160.782" width="61.4171" height="64.8457"/>
   <object id="13" type="collision" x="67.5105" y="253.165" width="39.9734" height="63.9574"/>
   <object id="14" type="collision" x="66.6223" y="236.287" width="15.9893" height="23.0957"/>
   <object id="15" type="collision" x="191.872" y="191.872" width="382.856" height="45.3031"/>

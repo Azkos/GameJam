@@ -3,10 +3,10 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "Map/SalleMain.tmx",
+    "activeFile": "Map/SalleAmphiBoss.tmx",
     "expandedProjectPaths": [
-        ".",
-        "Map"
+        "Map",
+        "."
     ],
     "fileStates": {
         "": {
@@ -16,11 +16,11 @@
             "expandedObjectLayers": [
                 11
             ],
-            "scale": 1.12575,
+            "scale": 4.5554,
             "selectedLayer": 8,
             "viewCenter": {
-                "x": 398.4010659560293,
-                "y": 302.46502331778817
+                "x": 577.446546955262,
+                "y": 121.72366861307461
             }
         },
         "Map/SalleAmphiBoss.tmx#MurAmphi": {
@@ -45,8 +45,8 @@
             "scale": 1.0227,
             "selectedLayer": 5,
             "viewCenter": {
-                "x": 414.09993155373036,
-                "y": 296.7634692480689
+                "x": 413.1221277011831,
+                "y": 295.7856653955217
             }
         },
         "Map/SalleCours.tmx#Interieur": {
@@ -66,14 +66,14 @@
         },
         "Map/SalleFace.tmx": {
             "expandedObjectLayers": [
-                4,
-                5
+                5,
+                4
             ],
-            "scale": 0.8149,
-            "selectedLayer": 3,
+            "scale": 3.6502,
+            "selectedLayer": 5,
             "viewCenter": {
-                "x": 387.1640692109462,
-                "y": 291.4468032887471
+                "x": 397.64944386608954,
+                "y": 301.49032929702486
             }
         },
         "Map/SalleFace.tmx#Interieur": {
@@ -96,8 +96,8 @@
             "scale": 1.12575,
             "selectedLayer": 5,
             "viewCenter": {
-                "x": 400.177659338219,
-                "y": 304.2416166999777
+                "x": 399.2893626471241,
+                "y": 303.353320008883
             }
         },
         "Map/SalleInfo.tmx#Interiors_free_32x32_dg": {
@@ -116,11 +116,14 @@
             "scaleInDock": 1
         },
         "Map/SalleMain.tmx": {
+            "expandedObjectLayers": [
+                12
+            ],
             "scale": 0.722,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 331.7174515235457,
-                "y": 184.90304709141276
+                "x": 398.8919667590028,
+                "y": 304.016620498615
             }
         },
         "Map/SalleMain.tmx#Escalier": {
@@ -196,9 +199,11 @@
             "scaleInEditor": 1
         },
         "Map/perso.tsx": {
+            "scaleInDock": 1,
             "scaleInEditor": 1
         },
         "Map/pingouin2.tsx": {
+            "scaleInDock": 1,
             "scaleInEditor": 1
         },
         "Map/player.tsx": {
@@ -208,18 +213,26 @@
     },
     "last.imagePath": "C:/Users/rebel/OneDrive/Bureau/Cours/GameJam/Map",
     "openFiles": [
-        "Map/SalleMain.tmx"
+        "Map/SalleMain.tmx",
+        "Map/SalleFace.tmx",
+        "Map/SalleInfo.tmx",
+        "Map/SalleAmphiBoss.tmx",
+        "Map/SalleCours.tmx",
+        "Map/SalleMainParallele.tmx",
+        "Map/perso.tsx"
     ],
     "project": "sans titre.tiled-project",
     "recentFiles": [
-        "Map/pingouin2.tsx",
-        "Map/perso.tsx",
-        "Map/mob1.tsx",
-        "Map/player.tsx",
+        "Map/SalleMainParallele.tmx",
         "Map/SalleFace.tmx",
-        "Map/SalleCours.tmx",
         "Map/SalleMain.tmx",
-        "Map/SalleAmphiBoss.tmx"
+        "Map/SalleInfo.tmx",
+        "Map/perso.tsx",
+        "Map/SalleCours.tmx",
+        "Map/SalleAmphiBoss.tmx",
+        "Map/pingouin2.tsx",
+        "Map/mob1.tsx",
+        "Map/player.tsx"
     ],
     "tileset.lastUsedFormat": "tsx"
 }
