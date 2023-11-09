@@ -34,7 +34,7 @@ def main():
     font = pygame.font.Font(None, 36)
 
     # Chargez l'image d'arrière-plan pour le menu
-    fond = pygame.image.load("image/v_iut2-rentree-2023_1696500078894-jpg (2)_120x80.png")
+    fond = pygame.image.load("image/iut2.png")
     fond = pygame.transform.scale(fond, (largeur, hauteur))
 
     # Texte de l'écran de titre
