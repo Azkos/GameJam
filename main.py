@@ -129,7 +129,8 @@ def main():
                         scene_actuelle = "jeu"
                         carte_actuelle_nom = "Map/SalleMain.tmx"
                         pygame.mixer_music.load("Musique/musique.mp3")
-                        pygame.mixer_music.play()
+                        pygame.mixer_music.play(-1)
+
                 elif scene_actuelle == "credit":
                     if evenement.key == pygame.K_ESCAPE:
                         scene_actuelle = "titre"
@@ -145,6 +146,8 @@ def main():
                         pygame.mixer_music.stop()
                         dialogue_index = 0
                         carte_actuelle_nom = "Map/SalleMainParallele.tmx"
+                        pygame.mixer_music.load("Musique/musique.mp3")
+                        pygame.mixer_music.play(-1)
 
         if scene_actuelle == "titre":
             # Afficher l'arrière-plan de l'écran de titre
@@ -207,6 +210,8 @@ def main():
                 carte_actuelle_nom = teleport
                 mon_sprite.rect.x = spawn[carte_actuelle_nom][0]
                 mon_sprite.rect.y = spawn[carte_actuelle_nom][1]
+                pygame.mixer_music.load("Musique/musique.mp3")
+                pygame.mixer_music.play(-1)
 
             if mon_sprite.checkCollision(carte, "dance"):
                 if lancer_dance(fenetre, carte_actuelle_nom, mon_sprite, dance):
