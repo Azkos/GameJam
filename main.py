@@ -17,7 +17,7 @@ def main():
     if len(sys.argv) > 1:
         nom_personnage = "Nom : " + sys.argv[1]
     else:
-        nom_personnage = "Nom du personnage par défaut"
+        nom_personnage = "Nom : no idea"
 
     # Initialisation de Pygame
     pygame.init()
@@ -121,6 +121,9 @@ def main():
                     else:
                         scene_actuelle = "jeu"
                         carte_actuelle_nom = "Map/SalleMain.tmx"
+                        pygame.mixer.music.stop()
+                        pygame.mixer_music.load("Musique/musique.mp3")
+                        pygame.mixer_music.play(-1)
                 elif scene_actuelle == "credit":
                     if evenement.key == pygame.K_ESCAPE:
                         scene_actuelle = "titre"
@@ -156,7 +159,7 @@ def main():
 
         elif scene_actuelle == "jeu":
 
-            pygame.mixer.music.stop()
+
 
             genererSalle = GenererSalles(carte_actuelle_nom, fenetre, largeur, hauteur)
             carte = genererSalle.genererSalle()
