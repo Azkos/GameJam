@@ -94,12 +94,12 @@ def main():
 
     # Cartes préchargées
     spawn = {
-        "Map/SalleMain.tmx": (570, 32),
-        'Map/SalleMainParallele.tmx': (100, 100),
-        'Map/SalleAmphiBoss.tmx': (570, 32),
+        "Map/SalleMain.tmx": (300, 300),
+        'Map/SalleMainParallele.tmx': (300, 300),
+        'Map/SalleAmphiBoss.tmx': (550, 32),
         'Map/SalleFace.tmx': (330, 500),
-        'Map/SalleCours.tmx': (640, 236),
-        'Map/SalleInfo.tmx': (32, 224),
+        'Map/SalleCours.tmx': (670, 300),
+        'Map/SalleInfo.tmx': (90, 224),
     }
 
     # Portes et destinations pour toutes les cartes
@@ -181,8 +181,11 @@ def main():
                            "Kevin Zheng : Level Designer",
                            "Théo Besset : Scénariste",
                            "Musiques et Bruitages : https://lasonotheque.org",
+                                                    "My Life for Witherlimb de Will Savino",
+                                                    "Voix : Sans de Undertale",
                            "Images et Sprites : https://iut2.univ-grenoble-alpes.fr",
-                           "https://ccrgeek.wordpress.com/2016/01/01/mv-school-tile-set/"]
+                           "https://ccrgeek.wordpress.com/2016/01/01/mv-school-tile-set/",
+                           "https://fallinlovewithyou-raura.blogspot.com/2021/01/pixel-art-character-generator-please.html"]
             pos_x = 50
             pos_y = 50
             for texte in cred_textes:
@@ -204,9 +207,11 @@ def main():
                 mon_sprite.rect.x = mon_sprite.last_pos[0]
                 mon_sprite.rect.y = mon_sprite.last_pos[1]
 
+
             fenetre.blit(mon_sprite.image, mon_sprite.rect)
 
-
+            if carte_actuelle_nom != "Map/SalleMain.tmx":
+                del genererSalle
 
             # Afficher le nom du personnage en haut à gauche
             nom_personnage_texte = font.render(nom_personnage, True, couleur_titre)

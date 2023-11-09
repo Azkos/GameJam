@@ -80,7 +80,7 @@
   <object id="24" type="collision" x="735.974" y="61.4965" width="63.4803" height="511.81"/>
   <object id="25" type="collision" x="62.4884" y="543.55" width="676.461" height="61.4965"/>
   <object id="26" type="collision" x="3.96752" y="63.4803" width="58.5209" height="510.818"/>
-  <object id="29" name="SalleMainParallele.tmx" type="Teleporte" x="600.087" y="31.7401" width="45.6264" height="63.4803"/>
+  <object id="29" name="SalleMainParallele.tmx" type="Teleporte" x="601.404" y="31.7401" width="44.3093" height="63.4803"/>
   <object id="30" type="collision" x="613.973" y="218.213" width="84.3097" height="225.157"/>
   <object id="31" type="collision" x="616.949" y="480.069" width="51.5777" height="30.7482"/>
   <object id="33" type="collision" x="286.653" y="348.15" width="287.645" height="162.668"/>
