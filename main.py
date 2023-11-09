@@ -120,8 +120,7 @@ def main():
                         scene_actuelle = "credit"
                     else:
                         scene_actuelle = "jeu"
-                        carte_actuelle_nom = "SalleMain"
-                        carte_actuelle = cartes[carte_actuelle_nom]
+                        carte_actuelle_nom = "Map/SalleMain.tmx"
                 elif scene_actuelle == "credit":
                     if evenement.key == pygame.K_ESCAPE:
                         scene_actuelle = "titre"
