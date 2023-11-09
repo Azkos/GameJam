@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="left-up" width="25" height="19" tilewidth="32" tileheight="32" infinite="0" nextlayerid="11" nextobjectid="1">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="left-up" width="25" height="19" tilewidth="32" tileheight="32" infinite="0" nextlayerid="12" nextobjectid="48">
  <tileset firstgid="1" name="MurAmphi" tilewidth="32" tileheight="32" tilecount="266" columns="19">
   <properties>
    <property name="Solid" type="bool" value="true"/>
@@ -38,6 +38,24 @@
    eJwLYGBgCBjFo3gUj+JRPIpHMc0wAChElHE=
   </data>
  </layer>
+ <objectgroup id="11" name="Collision">
+  <object id="22" type="collision" x="0" y="1.98376" width="603.062" height="66.4559"/>
+  <object id="23" type="collision" x="640.754" y="0" width="156.717" height="63.4803"/>
+  <object id="24" type="collision" x="735.974" y="61.4965" width="63.4803" height="511.81"/>
+  <object id="25" type="collision" x="62.4884" y="543.55" width="676.461" height="61.4965"/>
+  <object id="26" type="collision" x="3.96752" y="63.4803" width="58.5209" height="510.818"/>
+  <object id="29" type="Teleporte" x="600.087" y="31.7401" width="45.6264" height="63.4803"/>
+  <object id="30" type="collision" x="613.973" y="218.213" width="84.3097" height="225.157"/>
+  <object id="31" type="collision" x="616.949" y="480.069" width="51.5777" height="30.7482"/>
+  <object id="33" type="collision" x="286.653" y="348.15" width="287.645" height="162.668"/>
+  <object id="34" type="collision" x="255.905" y="270.783" width="287.645" height="166.636"/>
+  <object id="37" type="collision" x="352.117" y="214.246" width="150.766" height="54.5533"/>
+  <object id="39" type="collision" x="95.2204" y="167.628" width="94.2285" height="113.074"/>
+  <object id="41" type="collision" x="95.2204" y="280.702" width="67.4478" height="92.2447"/>
+  <object id="42" type="collision" x="97.2041" y="413.614" width="66.4559" height="130.928"/>
+  <object id="43" type="collision" x="155.725" y="446.346" width="36.6995" height="96.2123"/>
+  <object id="47" type="collision" x="287.645" y="200.36" width="29.7564" height="35.7076"/>
+ </objectgroup>
  <layer id="2" name="Mur1" width="25" height="19">
   <data encoding="base64" compression="zlib">
    eJzzY2Bg8KMx9gViJhpiXyQ7aAFG7Ri1Y9SOUTtG7RhYO2hZfxTTAQMArQ8drA==

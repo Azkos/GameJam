@@ -2,6 +2,7 @@ import pygame
 
 largeur = 600
 hauteur = 800
+
 sprite_walk1 = pygame.image.load("sprite/chara-walk1.png")
 sprite_walk2 = pygame.image.load("sprite/chara-walk2.png")
 
@@ -17,6 +18,9 @@ class Sprite(pygame.sprite.Sprite):
         self.rect.center = (largeur // 2, hauteur // 3)  # Position initiale du sprite
         self.facing_left = False
         self.last_pos = (self.rect.x, self.rect.y)
+        # Créer une hitbox aux pieds du sprite
+        self.hitbox = self.rect.inflate(0, -self.rect.height * 0.8)  # Réduire la hitbox en hauteur
+        self.hitbox.bottom = self.rect.bottom  # Aligner le bas de la hitbox avec le bas du sprite
 
     def deplacement(self, vitesse):
         touches = pygame.key.get_pressed()
@@ -42,6 +46,8 @@ class Sprite(pygame.sprite.Sprite):
         self.last_pos = (self.rect.x, self.rect.y)
         self.rect.x += direction[0]
         self.rect.y += direction[1]
+        self.hitbox.x = self.rect.x
+        self.hitbox.bottom = self.rect.bottom  # Gardez la hitbox alignée avec les pieds
 
     def checkCollision(self, carte, type):
         liste_collision = []
@@ -50,7 +56,8 @@ class Sprite(pygame.sprite.Sprite):
             if object.type == type:
                 rect = pygame.Rect(object.x, object.y, object.width, object.height)
                 liste_collision.append(rect)
-        if self.rect.collidelist(liste_collision) > -1:
+        # Vérifier la collision avec la hitbox
+        if self.hitbox.collidelist(liste_collision) > -1:
             return True
         else:
             return False

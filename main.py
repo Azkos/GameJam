@@ -2,7 +2,6 @@ import pygame
 import sys
 import pytmx
 
-from Personnage.Informatique import Informatique
 from Personnage.Sprite import Sprite
 from Map.GenererSalles import GenererSalles
 
@@ -50,9 +49,14 @@ def main():
     scene_actuelle = "titre"
     dialogue_actif = False
     dialogues = [
-        "Bonjour, je suis un pingouin !",
-        "C'est un beau jour pour une aventure !",
-        "N'oubliez pas d'apporter votre équipement !"
+        "Bonjour, je suis ici pour vous préparer à vos épreuves",
+        "Vous devez rester en forme pour être au maximum ",
+        "Vous allez passer 3 épreuves de bases puis une final",
+        "Ces épreuves constitueront de danser au bon rythme ",
+        "Puis vous serez dans le rythme mieux ce sera",
+        "Je vais vous téléporter dans une dimension rythmé",
+        "Vous êtes prêt ? C'est parti !!!!!!"
+
     ]
     dialogue_index = 0
 
@@ -63,7 +67,7 @@ def main():
     # Cartes préchargées
     cartes = {
         "SalleMain": pytmx.util_pygame.load_pygame('Map/SalleMain.tmx'),
-        "SalleMainParallele": pytmx.util_pygame.load_pygame('Map/SalleMainParallele.tmx'),
+            "SalleMainParallele": pytmx.util_pygame.load_pygame('Map/SalleMainParallele.tmx'),
         "SalleAmphiBoss": pytmx.util_pygame.load_pygame('Map/SalleAmphiBoss.tmx'),
         "SalleFace": pytmx.util_pygame.load_pygame('Map/SalleFace.tmx'),
         "SalleCours": pytmx.util_pygame.load_pygame('Map/SalleCours.tmx'),
@@ -158,10 +162,14 @@ def main():
             genererSalle = GenererSalles("Map/SalleMain.tmx", fenetre, largeur, hauteur)
             carte = genererSalle.genererSalle()
 
+            mon_sprite.update()
+
             mon_sprite.deplacement(8)
             if mon_sprite.checkCollision(carte, "collision"):
                 mon_sprite.rect.x = mon_sprite.last_pos[0]
                 mon_sprite.rect.y = mon_sprite.last_pos[1]
+
+
 
             fenetre.blit(mon_sprite.image, mon_sprite.rect)
 
